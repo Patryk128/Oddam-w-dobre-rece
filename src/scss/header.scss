@@ -1,0 +1,130 @@
+.conteiner {
+  width: 1900px;
+  padding-right: 142px;
+}
+.header {
+  margin-top: 37px;
+}
+.header-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  padding-right: 142px;
+}
+.header-header.scrolled {
+  width: 100%;
+  background-color: #f0f0f0;
+}
+.user-log {
+  margin-left: auto;
+  margin-bottom: 34px;
+  li {
+    font-size: 14px;
+    color: $user-color;
+    padding: 9px 20px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+    &:hover {
+      cursor: pointer;
+      border-color: $warning-color;
+    }
+  }
+}
+.header-nav {
+  margin-left: auto;
+  li {
+    font-size: 14px;
+    color: $user-color;
+    padding: 9px 20px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+    &:hover {
+      cursor: pointer;
+      border-color: $header-color;
+    }
+  }
+}
+.header-nav-nav {
+  display: flex;
+  // gap: 30px;
+}
+main {
+  display: flex;
+}
+.header-image {
+  background-image: url(../assets/Home-Hero-Image.jpg);
+  background-size: cover;
+  background-position: right;
+  width: 885px;
+  height: 960px;
+}
+.header-main {
+  margin-top: 220px;
+  margin-left: auto;
+  display: flex;
+}
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header-title {
+  font-size: 38px;
+  color: $header-color;
+  text-align: center;
+  padding-bottom: 25px;
+}
+.header-border {
+  background-image: url(../assets/Decoration.png);
+  background-size: cover;
+  background-position: center;
+  width: 250px;
+  height: 33px;
+}
+.header-btns {
+  padding-top: 78px;
+  display: flex;
+  gap: 40px;
+  color: $header-color;
+  font-size: 36px;
+}
+.header-btn {
+  text-align: center;
+  padding: 13px 51px;
+  border: 1px solid $header-color;
+  font-weight: 300;
+}
+
+.three-col {
+  background-image: url(../assets/3_Columns_Background.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 163px;
+}
+.three-col-content {
+  padding: 45px 70px 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.three-col-number {
+  font-size: 90px;
+  font-weight: 300;
+  color: $number-color;
+}
+.three-col-title {
+  font-size: 18px;
+  color: $header-color;
+  margin-bottom: 26px;
+}
+.three-col-text {
+  font-size: 16px;
+  color: $header-color;
+  font-family: $font-alt;
+  font-weight: 300;
+  text-align: center;
+}

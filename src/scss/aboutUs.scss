@@ -1,0 +1,43 @@
+.about-us {
+  margin-top: 80px;
+  width: 1900px;
+  height: 935px;
+  @include flex;
+}
+.about-text {
+  background-color: $primary-color;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 55px 150px;
+}
+.about-title {
+  font-size: 38px;
+  color: $header-color;
+  padding-bottom: 26px;
+  margin-top: 190px;
+}
+.about-descrition {
+  font-size: 30px;
+  color: $header-color;
+  text-align: center;
+  margin-top: 55px;
+}
+.about-signature {
+  background-image: url(../assets/Signature.svg);
+  background-repeat: no-repeat;
+  width: 210px;
+  height: 210px;
+  align-self: flex-end;
+  margin-top: 50px;
+}
+
+.about-img {
+  background-image: url(../assets/People.jpg);
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: left;
+}

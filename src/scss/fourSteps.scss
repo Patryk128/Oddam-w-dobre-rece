@@ -1,0 +1,61 @@
+.four-steps {
+  width: 100%;
+  text-align: center;
+}
+.four-steps-header {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.four-steps-title {
+  font-size: 38px;
+  color: $header-color;
+  margin-top: 55px;
+  margin-bottom: 25px;
+}
+.four-steps-content {
+  background-color: $primary-color;
+  width: 100%;
+  height: 325px;
+  margin: 35px 0;
+  @include flex;
+  justify-content: space-evenly;
+}
+.four-steps-single {
+  @include flex;
+  flex-direction: column;
+  text-align: center;
+  width: 130px;
+}
+.four-steps-img {
+  height: 83px;
+  width: 83px;
+  padding-bottom: 8px;
+}
+.four-steps-img-first {
+  background-image: url(../assets/Icon-1.svg);
+}
+.four-steps-img-second {
+  background-image: url(../assets/Icon-2.svg);
+}
+.four-steps-img-third {
+  background-image: url(../assets/Icon-3.svg);
+}
+.four-steps-img-fourth {
+  background-image: url(../assets/Icon-4.svg);
+}
+.four-steps-single-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid $header-color;
+}
+.four-steps-descrition {
+  text-align: center;
+  font-size: 16px;
+  color: $header-color;
+}
+.four-steps {
+  button {
+    margin: 0;
+  }
+}

@@ -1,6 +1,11 @@
 @import "./reset.scss";
 @import "./settings/fonts";
+@import "./settings/mixins.scss";
 @import "./settings/colors.scss";
+@import "./header.scss";
+@import "/src/scss/fourSteps.scss";
+@import "/src/scss/aboutUs.scss";
+@import "/src/scss/organizations.scss";
 
 body {
   font-family: $font-base;
