@@ -4,7 +4,8 @@ import HomeHeader from "./HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns";
 import HomeFourSteps from "./HomeFourSteps";
 import HomeAboutUs from "./HomeAboutUs";
-import Organizations from "../Organizations";
+import Organizations from "./Organizations";
+import Contact from "./Contact";
 
 const Home = () => {
   return (
@@ -21,6 +22,9 @@ const Home = () => {
       </Element>
       <Element name="about-us">
         <Organizations name="organization" />
+      </Element>
+      <Element name="contact">
+        <Contact />
       </Element>
     </div>
   );

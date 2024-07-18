@@ -115,12 +115,6 @@ const zbiorki = [
     mission: "Lorem, ipsum",
     needs: "Lorem, ipsum dolor",
   },
-  {
-    id: 4,
-    name: `Zbiórka "Lorem Ipsum 4"`,
-    mission: "Lorem, ipsum",
-    needs: "Lorem, ipsum dolor",
-  },
 ];
 
 const Organizations = () => {
@@ -135,18 +129,22 @@ const Organizations = () => {
     } else if (category === "organizacje") {
       return organizacje.slice((page - 1) * perPage, page * perPage);
     } else {
-      return zbiorki.slice((page - 1) * perPage, page * perPage);
+      return zbiorki;
+    }
+  };
+
+  const getTotalItems = () => {
+    if (category === "fundacje") {
+      return fundacje.length;
+    } else if (category === "organizacje") {
+      return organizacje.length;
+    } else {
+      return zbiorki.length;
     }
   };
 
   const totalPages = () => {
-    if (category === "fundacje") {
-      return Math.ceil(fundacje.length / perPage);
-    } else if (category === "organizacje") {
-      return Math.ceil(organizacje.length / perPage);
-    } else {
-      return Math.ceil(zbiorki.length / perPage);
-    }
+    return Math.ceil(getTotalItems() / perPage);
   };
 
   const handleCategoryChange = (newCategory) => {
@@ -157,6 +155,8 @@ const Organizations = () => {
   const handlePageChange = (newPage) => {
     setPage(newPage);
   };
+
+  const shouldPaginate = getTotalItems() > 3;
 
   return (
     <div className="organizations">
@@ -202,17 +202,19 @@ const Organizations = () => {
           </div>
         ))}
       </div>
-      <div className="pagination">
-        {[...Array(totalPages())].map((_, index) => (
-          <button
-            key={index + 1}
-            className={page === index + 1 ? "active" : ""}
-            onClick={() => handlePageChange(index + 1)}
-          >
-            {index + 1}
-          </button>
-        ))}
-      </div>
+      {shouldPaginate && (
+        <div className="pagination">
+          {[...Array(totalPages())].map((_, i) => (
+            <button
+              key={i + 1}
+              onClick={() => handlePageChange(i + 1)}
+              className={page === i + 1 ? "active" : ""}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
