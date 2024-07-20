@@ -22,7 +22,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="contact">
+    <section className="contact-content">
       <div className="contact-img"></div>
       <div className="contact-form">
         <h2 className="contact-title">Skontaktuj się z nami</h2>
@@ -35,7 +35,7 @@ const ContactForm = () => {
                 type="text"
                 id="name"
                 name="name"
-                value={formData.name}
+                placeholder={formData.name}
                 onChange={handleChange}
                 required
               />
@@ -46,19 +46,19 @@ const ContactForm = () => {
                 type="email"
                 id="email"
                 name="email"
-                value={formData.email}
+                placeholder={formData.email}
                 onChange={handleChange}
                 required
               />
             </div>
           </div>
-          <div className="contact-input">
+          <div className="contact-input contact-input-textarea">
             <label htmlFor="message">Wpisz swoją wiadomość</label>
             <textarea
               id="message"
               name="message"
               rows="4"
-              value={formData.message}
+              placeholder={formData.message}
               onChange={handleChange}
               required
             />
@@ -70,6 +70,16 @@ const ContactForm = () => {
           </div>
         </form>
       </div>
+
+      <footer className="footer">
+        <div className="footer-content">
+          <h2 className="footer-title">Copyright by Coders Lab</h2>
+          <div className="footer-socials">
+            <div className="footer-social footer-social-fb"></div>
+            <div className="footer-social footer-social-ig"></div>
+          </div>
+        </div>
+      </footer>
     </section>
   );
 };

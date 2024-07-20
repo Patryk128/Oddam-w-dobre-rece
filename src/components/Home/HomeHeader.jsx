@@ -2,21 +2,21 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Link as Scroll } from "react-scroll";
 const HomeHeader = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const header = document.querySelector(".header-header");
-      if (window.scrollY > 0) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const header = document.querySelector(".header-header");
+  //     if (window.scrollY > 0) {
+  //       header.classList.add("scrolled");
+  //     } else {
+  //       header.classList.remove("scrolled");
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <div className="header conteiner">

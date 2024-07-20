@@ -1,60 +1,68 @@
-.contact {
-  margin-top: 80px;
-  width: 100%;
+.contact-content {
   display: flex;
-  justify-content: space-between;
+  position: relative;
+  margin-top: 80px;
+  width: 1900px;
+  height: 1052px;
 }
-
 .contact-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("../assets/Background-Contact-Form.jpg");
-  background-position: center;
   background-size: cover;
-  width: 50%;
-  height: 500px;
+  opacity: 0.2;
+  z-index: -1;
 }
 .contact-name {
   display: flex;
-  gap: 15px;
+  gap: 16px;
 }
 .contact-form {
-  background-color: #ffffffc9;
+  margin-left: auto;
   text-align: center;
   width: 50%;
+  height: 100%;
   padding: 20px;
-  @include flex;
+  display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
 .contact-title {
-  margin-bottom: 10px;
-}
-
-.header-border {
-  width: 50px;
-  margin: 0 auto 20px auto;
-  border-bottom: 2px solid #000;
+  margin-top: 200px;
+  margin-bottom: 25px;
+  font-size: 38px;
 }
 
 .contact-input {
+  margin-top: 70px;
   margin-bottom: 15px;
   text-align: left;
+  color: gray;
   border-bottom: 1px solid $header-color;
+  width: 100%;
 }
-
+.contact-input-textarea {
+  margin-top: 40px;
+}
 .contact-input label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 12px;
+  color: $header-color;
 }
 
 .contact-input textarea {
   width: 530px;
-  padding: 10px;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
 .button-container {
   text-align: right;
+  margin-top: 44px;
 }
 
 .contact-button {
@@ -64,4 +72,40 @@
   color: #000;
   font-size: 16px;
   cursor: pointer;
+}
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  // padding-bottom: 20px;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-title {
+  font-size: 18px;
+  color: $header-color;
+  text-align: center;
+  flex: 1;
+}
+.footer-socials {
+  display: flex;
+  gap: 15px;
+  margin-left: 0;
+  padding-right: 142px;
+}
+.footer-social {
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+.footer-social-fb {
+  background-image: url(../assets/Facebook.svg);
+}
+.footer-social-ig {
+  background-image: url(../assets/Instagram.svg);
 }
