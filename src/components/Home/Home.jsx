@@ -1,6 +1,7 @@
 import React from "react";
 import { Element } from "react-scroll";
 import HomeHeader from "./HomeHeader";
+import HomeMain from "./HomeMain";
 import HomeThreeColumns from "./HomeThreeColumns";
 import HomeFourSteps from "./HomeFourSteps";
 import HomeAboutUs from "./HomeAboutUs";
@@ -13,6 +14,7 @@ const Home = () => {
       <Element name="start">
         <HomeHeader />
       </Element>
+      <HomeMain />
       <Element name="about">
         <HomeThreeColumns />
         <HomeFourSteps />

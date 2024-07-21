@@ -2,11 +2,13 @@ import React, { useState } from "react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: "Krzysztof",
-    email: "abc@xyz.pl",
-    message:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    name: "",
+    email: "",
+    message: "",
   });
+
+  const [errors, setErrors] = useState({});
+  const [submissionStatus, setSubmissionStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,9 +18,69 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const validate = () => {
+    let errors = {};
+    if (!formData.name.trim()) {
+      errors.name = "Imię jest wymagane.";
+    } else if (formData.name.split(" ").length > 1) {
+      errors.name = "Imię powinno być jednym wyrazem.";
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      errors.email = "Email jest wymagany.";
+    } else if (!emailRegex.test(formData.email)) {
+      errors.email = "Email jest niepoprawny.";
+    }
+
+    if (!formData.message.trim()) {
+      errors.message = "Wiadomość jest wymagana.";
+    } else if (formData.message.length < 120) {
+      errors.message = "Wiadomość musi mieć co najmniej 120 znaków.";
+    }
+
+    return errors;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form data:", formData);
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "https://fer-api.coderslab.pl/v1/portfolio/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        setErrors(errorData.errors);
+        return;
+      }
+
+      const result = await response.json();
+      if (result.status === "success") {
+        setSubmissionStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+        setErrors({});
+      }
+    } catch (error) {
+      console.error("Błąd wysyłania formularza:", error);
+    }
   };
 
   return (
@@ -27,6 +89,12 @@ const ContactForm = () => {
       <div className="contact-form">
         <h2 className="contact-title">Skontaktuj się z nami</h2>
         <div className="header-border"></div>
+        {submissionStatus === "success" && (
+          <p className="success-message">
+            Wiadomość została wysłana!
+            <br /> Wkrótce się skontaktujemy.
+          </p>
+        )}
         <form onSubmit={handleSubmit}>
           <div className="contact-name">
             <div className="contact-input">
@@ -35,10 +103,11 @@ const ContactForm = () => {
                 type="text"
                 id="name"
                 name="name"
-                placeholder={formData.name}
+                value={formData.name}
                 onChange={handleChange}
-                required
+                className={errors.name ? "error" : ""}
               />
+              {errors.name && <p className="error-message">{errors.name}</p>}
             </div>
             <div className="contact-input">
               <label htmlFor="email">Wpisz swój email</label>
@@ -46,10 +115,11 @@ const ContactForm = () => {
                 type="email"
                 id="email"
                 name="email"
-                placeholder={formData.email}
+                value={formData.email}
                 onChange={handleChange}
-                required
+                className={errors.email ? "error" : ""}
               />
+              {errors.email && <p className="error-message">{errors.email}</p>}
             </div>
           </div>
           <div className="contact-input contact-input-textarea">
@@ -58,10 +128,13 @@ const ContactForm = () => {
               id="message"
               name="message"
               rows="4"
-              placeholder={formData.message}
+              value={formData.message}
               onChange={handleChange}
-              required
+              className={errors.message ? "error" : ""}
             />
+            {errors.message && (
+              <p className="error-message">{errors.message}</p>
+            )}
           </div>
           <div className="button-container">
             <button className="contact-button" type="submit">

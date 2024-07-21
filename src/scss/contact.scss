@@ -42,7 +42,7 @@
   margin-bottom: 15px;
   text-align: left;
   color: gray;
-  border-bottom: 1px solid $header-color;
+  // border-bottom: 1px solid $header-color;
   width: 100%;
 }
 .contact-input-textarea {
@@ -108,4 +108,29 @@
 }
 .footer-social-ig {
   background-image: url(../assets/Instagram.svg);
+}
+/* style.css */
+.contact-input input,
+.contact-input textarea {
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.contact-input input.error,
+.contact-input textarea.error {
+  border-bottom: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 20px;
 }
