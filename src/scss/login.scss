@@ -34,17 +34,17 @@
 
 .login-input {
   margin-bottom: 15px;
+  width: 250px;
 }
 
 .login-input label {
   display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+  color: $header-color;
+  font-weight: 600;
 }
 
 .login-input input {
   width: 200px;
-  padding: 10px;
   border-bottom: 1px solid $header-color;
 }
 
@@ -69,4 +69,14 @@
 
 .login-button-login {
   border: 1px solid $header-color;
+}
+.error {
+  color: red;
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.login-input .input-error {
+  border-bottom: 1px solid red;
 }
