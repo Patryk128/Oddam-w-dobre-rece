@@ -18,7 +18,7 @@ const HomeHeader = () => {
         <ul className="header-nav-nav">
           <li>
             <Scroll to="start" smooth={true}>
-              Start
+              <Link to="/home">Start</Link>
             </Scroll>
           </li>
           <li>
@@ -40,6 +40,9 @@ const HomeHeader = () => {
             <Scroll to="contact" smooth={true}>
               Kontakt
             </Scroll>
+          </li>
+          <li>
+            <Link to="/logout">Logout</Link>
           </li>
         </ul>
       </nav>
