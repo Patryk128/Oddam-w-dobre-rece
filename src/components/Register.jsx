@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import HomeHeader from "./Home/HomeHeader";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "./firebaseConfig"; // Import Firebase auth
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -12,8 +14,9 @@ const Register = () => {
     confirmPassword: "",
   });
 
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+
   const validateEmail = (email) => {
-    // Simple email regex for validation
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
   };
@@ -42,8 +45,21 @@ const Register = () => {
     setErrors(newErrors);
 
     if (valid) {
-      // Form is valid, you can perform the login action here
-      console.log("Form is valid");
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          console.log("User registered:", userCredential.user);
+          navigate("/home"); // Redirect to home component
+        })
+        .catch((error) => {
+          console.error("Error registering user:", error.message);
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            email: error.message.includes("email") ? "Email już istnieje!" : "",
+            password: error.message.includes("password")
+              ? "Problem z hasłem!"
+              : "",
+          }));
+        });
     }
   };
 

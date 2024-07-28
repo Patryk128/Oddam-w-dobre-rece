@@ -1,0 +1,281 @@
+.to-give-back {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* lub odpowiednia wysokość */
+}
+.logged-home-warning {
+  background-color: $warning-color;
+  height: 180px;
+}
+.logged-home-warning-content {
+  padding-left: 125px;
+  padding: 50px 125px;
+}
+.logged-home-warning-title {
+  font-size: 36px;
+  color: #000;
+  font-weight: 600;
+}
+.logged-home-warning-description {
+  font-size: 22px;
+  color: $header-color;
+  font-weight: 300;
+}
+
+.to-give-back-form {
+  padding-left: 142px;
+  background-image: url(../assets/Background-Form.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 883px;
+}
+.to-give-back-step {
+  font-size: 24px;
+  color: $header-color;
+  padding-top: 36px;
+}
+.to-give-back-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 70px;
+}
+.to-give-back-form form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+
+  margin-top: 44px;
+  // height: 100%;
+}
+.to-give-back-form label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.to-give-back-form input[type="checkbox"] {
+  margin-right: 30px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: 0.75px solid $header-color;
+}
+
+.to-give-back-form input[type="checkbox"]:checked {
+  background-color: $warning-color;
+}
+.to-give-back-button-container {
+  padding-top: 185px;
+  padding-bottom: 73px;
+}
+.to-give-back-button {
+  font-size: 24px;
+  // padding: 23px 63px;
+
+  &:hover {
+    border: 1px solid $header-color;
+  }
+}
+
+.quantity-select {
+  display: flex;
+}
+.quantity-select-label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.quantity-select-dropdown {
+  width: 300px;
+  padding: 8px;
+  text-align: start;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-image: url(../assets/Icon-Arrow-Down.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  position: relative;
+}
+
+.quantity-select-option {
+  position: absolute;
+  left: 100px;
+  width: 50px;
+}
+
+.box {
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  display: flex;
+}
+.select_box {
+  display: flex;
+  width: 250px;
+  border: 1px solid $header-color;
+  font-size: 25px;
+  color: $header-color;
+  padding: 15px 20px;
+  cursor: pointer;
+  position: relative;
+  background-image: url(../assets/Icon-Arrow-Down.svg);
+  background-repeat: no-repeat;
+  // background-size: cover;
+  background-position: center right;
+}
+
+.option_box-small {
+  position: relative;
+}
+.option_box-small ul {
+  position: absolute;
+  right: 0;
+  top: 80px;
+  margin-top: 10px;
+  width: 75px;
+  border: 1px solid $header-color;
+}
+
+.option_box-small ul li {
+  list-style: none;
+  font-size: 22px;
+  color: $header-color;
+
+  padding: 8px;
+  margin: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.option_box-large {
+  position: relative;
+}
+.option_box-large ul {
+  position: absolute;
+  right: 0;
+  top: 80px;
+  margin-top: 10px;
+  width: 250px;
+  border: 1px solid $header-color;
+}
+
+.option_box-large ul li {
+  list-style: none;
+  font-size: 22px;
+  color: $header-color;
+
+  padding: 8px;
+  margin: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.to-give-back-form {
+  position: relative;
+}
+
+.help-box {
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.help-select_box {
+  display: flex;
+  width: 250px;
+  border: 1px solid $header-color;
+  font-size: 25px;
+  color: $header-color;
+  padding: 15px 20px;
+  cursor: pointer;
+  position: relative;
+  background-image: url(../assets/Icon-Arrow-Down.svg);
+  background-repeat: no-repeat;
+  // background-size: cover;
+  background-position: center right;
+}
+
+.help-content {
+  margin-top: 50px;
+}
+.help-options {
+  display: flex;
+  width: 520px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.help-options-option {
+  border: 1px solid $header-color;
+  padding: 11px 26px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.help-options-option.active {
+  background-color: yellow;
+}
+.help-options-textarea {
+}
+.help-options-textarea textarea {
+  width: 570px;
+  height: 40px;
+  border: 1px solid $header-color;
+  text-align: left;
+  font-size: 26px;
+}
+
+/* src/components/HelpStep4.css */
+.pickup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* src/components/HelpStep5.css */
+.confirmation {
+  padding: 20px;
+}
+
+.confirmation p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* src/components/HelpNavigationButtons.css */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.navigation-buttons button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.navigation-buttons button:hover {
+  background-color: #0056b3;
+}

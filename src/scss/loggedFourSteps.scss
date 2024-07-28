@@ -1,0 +1,55 @@
+.logged-four-steps {
+  width: 1900px;
+  display: flex;
+  padding-right: 142px;
+}
+
+.logged-four-steps-img {
+  background-image: url(../assets/Form-Hero-Image.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 1000px;
+  height: 850px;
+}
+.logged-four-steps-content {
+  width: 100%;
+}
+.logged-four-steps-form {
+  margin-top: 135px;
+  @include flex;
+  flex-direction: column;
+  text-align: center;
+}
+.logged-four-steps-title {
+  font-size: 38px;
+  color: $header-color;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.logged-four-steps-descrition {
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+.logged-four-steps-steps {
+  @include flex;
+}
+.logged-four-steps-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid $header-color;
+  width: 190px;
+  height: 190px;
+  rotate: 45deg;
+  text-align: center;
+  font-size: 22px;
+  color: $header-color;
+}
+.logged-four-steps-step span {
+  rotate: 315deg;
+}
+.logged-four-steps-step p {
+  margin-top: 10px;
+}

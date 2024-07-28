@@ -10,7 +10,9 @@
 @import "/src/scss/login.scss";
 @import "/src/scss/register.scss";
 @import "/src/scss/logout.scss";
-
+@import "/src/scss/loggedFourSteps.scss";
+@import "/src/scss/loggedHeader.scss";
+@import "/src/scss/toGiveBack.scss";
 body {
   font-family: $font-base;
 }

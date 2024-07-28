@@ -1,14 +1,20 @@
 import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import HomeHeader from "./Home/HomeHeader";
-import { Link } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./firebaseConfig";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({ email: "", password: "" });
+  const [validationErrors, setValidationErrors] = useState({
+    email: "",
+    password: "",
+  });
+  const [generalError, setGeneralError] = useState("");
+  const navigate = useNavigate();
 
   const validateEmail = (email) => {
-    // Simple email regex for validation
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
   };
@@ -16,23 +22,34 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let valid = true;
-    let newErrors = { email: "", password: "" };
+    let newValidationErrors = { email: "", password: "" };
 
     if (!validateEmail(email)) {
-      newErrors.email = "Podany email jest nieprawidłowy!";
+      newValidationErrors.email = "Podany email jest nieprawidłowy!";
       valid = false;
     }
 
     if (password.length < 6) {
-      newErrors.password = "Podane hasło jest za krótkie!";
+      newValidationErrors.password = "Podane hasło jest za krótkie!";
       valid = false;
     }
 
-    setErrors(newErrors);
+    setValidationErrors(newValidationErrors);
 
     if (valid) {
-      // Form is valid, you can perform the login action here
-      console.log("Form is valid");
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          const userData = {
+            isLoggedIn: true,
+            email: user.email,
+          };
+          localStorage.setItem("user", JSON.stringify(userData));
+          navigate("/", { state: { email: user.email } });
+        })
+        .catch((err) => {
+          setGeneralError(err.message);
+        });
     }
   };
 
@@ -54,9 +71,11 @@ const Login = () => {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={errors.email ? "input-error" : ""}
+                className={validationErrors.email ? "input-error" : ""}
               />
-              {errors.email && <div className="error">{errors.email}</div>}
+              {validationErrors.email && (
+                <div className="error">{validationErrors.email}</div>
+              )}
             </div>
             <div className="login-input">
               <label htmlFor="password">Hasło</label>
@@ -66,25 +85,22 @@ const Login = () => {
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className={errors.password ? "input-error" : ""}
+                className={validationErrors.password ? "input-error" : ""}
               />
-              {errors.password && (
-                <div className="error">{errors.password}</div>
+              {validationErrors.password && (
+                <div className="error">{validationErrors.password}</div>
               )}
             </div>
+            {generalError && <div className="error">{generalError}</div>}
+            <div className="login-nav">
+              <button className="login-button login-button-register">
+                <Link to="/register">Załóż konto</Link>
+              </button>
+              <button type="submit" className="login-button login-button-login">
+                Zaloguj się
+              </button>
+            </div>
           </form>
-          <div className="login-nav">
-            <button className="login-button login-button-register">
-              <Link to="/register">Załóż konto</Link>
-            </button>
-            <button
-              type="submit"
-              className="login-button login-button-login"
-              onClick={handleSubmit}
-            >
-              Zaloguj się
-            </button>
-          </div>
         </div>
       </section>
     </>

@@ -164,7 +164,7 @@ const Organizations = () => {
         <h1 className="organization-title">Komu pomagamy?</h1>
         <div className="header-border"></div>
       </div>
-      <div className="buttons">
+      <div className="organizations-buttons">
         <button
           className={category === "fundacje" ? "active" : ""}
           onClick={() => handleCategoryChange("fundacje")}

@@ -1,24 +1,38 @@
-import React from "react";
-import { Link } from "react-router-dom";
-const HomeMain = () => {
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const header = document.querySelector(".header-header");
-  //     if (window.scrollY > 0) {
-  //       header.classList.add("scrolled");
-  //     } else {
-  //       header.classList.remove("scrolled");
-  //     }
-  //   };
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+const HomeMain = () => {
+  const [user, setUser] = useState({
+    isLoggedIn: false,
+    email: "",
+  });
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("user")) || {};
+    if (userData.isLoggedIn) {
+      setUser(userData);
+    }
+  }, []);
+
+  const handleGiveAwayClick = () => {
+    if (user.isLoggedIn) {
+      navigate("/main");
+    } else {
+      navigate("/login");
+    }
+  };
+
+  const handleOrganizeClick = () => {
+    if (user.isLoggedIn) {
+      navigate("/main"); // Zakładając, że jest to ta sama strona; zmień, jeśli potrzebna inna strona
+    } else {
+      navigate("/login");
+    }
+  };
 
   return (
-    <div className="header conteiner">
+    <div className="header container">
       <main>
         <div className="header-image"></div>
         <div className="header-main">
@@ -30,11 +44,11 @@ const HomeMain = () => {
             </h2>
             <div className="header-border"></div>
             <div className="header-btns">
-              <button className="header-btn">
-                <Link to="/login">ODDAJ RZECZY</Link>
+              <button className="header-btn" onClick={handleGiveAwayClick}>
+                ODDAJ RZECZY
               </button>
-              <button className="header-btn">
-                <Link to="/login">ZORGANIZUJ ZBIÓRKĘ</Link>
+              <button className="header-btn" onClick={handleOrganizeClick}>
+                ZORGANIZUJ ZBIÓRKĘ
               </button>
             </div>
           </div>

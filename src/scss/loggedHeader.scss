@@ -1,0 +1,43 @@
+.logged-header-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 46px;
+}
+.logged-header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 27px;
+  li {
+    font-size: 14px;
+    color: $user-color;
+    padding: 9px 20px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+    &:hover {
+      cursor: pointer;
+      border-color: $header-color;
+    }
+  }
+}
+.logged-header-nav h2 {
+  font-size: 14px;
+  color: #000;
+}
+.logged-header-nav-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+.logged-header-button {
+  font-size: 14px;
+  color: $user-color;
+  padding: 9px 20px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+  &:hover {
+    cursor: pointer;
+    border-color: $warning-color;
+    color: #000;
+  }
+}

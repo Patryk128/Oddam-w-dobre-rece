@@ -1,7 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const HomeFourSteps = () => {
+  const [user, setUser] = useState({
+    isLoggedIn: false,
+    email: "",
+  });
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("user")) || {};
+    if (userData.isLoggedIn) {
+      setUser(userData);
+    }
+  }, []);
+
+  const handleGiveAwayClick = () => {
+    if (user.isLoggedIn) {
+      navigate("/main");
+    } else {
+      navigate("/login");
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <section className="four-steps">
@@ -39,8 +61,8 @@ const HomeFourSteps = () => {
             </div>
           </div>
         </div>
-        <button className="header-btn">
-          <Link to="/login">ODDAJ RZECZY</Link>
+        <button className="header-btn" onClick={handleGiveAwayClick}>
+          ODDAJ RZECZY
         </button>
       </section>
     </>
