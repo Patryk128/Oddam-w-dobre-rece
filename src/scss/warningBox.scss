@@ -1,0 +1,17 @@
+.alert-box {
+  background-color: $warning-color;
+  height: 179px;
+  padding-left: 142px;
+}
+
+.alert-title {
+  padding-top: 50px;
+  font-size: 36px;
+  color: #000;
+  font-weight: 600;
+}
+.alert-description {
+  font-size: 22px;
+  color: $header-color;
+  font-weight: 300;
+}

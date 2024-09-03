@@ -5,24 +5,21 @@ import Step3 from "./HelpStep3";
 import Step4 from "./HelpStep4";
 import Step5 from "./HelpStep5";
 import Step6 from "./HelpStep6";
-import NavigationButtons from "./HelpNavigationButtons";
-// import WarningContent from "./HelpWarningContent";
 
 const ToGiveBack = () => {
   const [step, setStep] = useState(1);
-  const [selectedValue, setSelectedValue] = useState("— wybierz —");
+  const [selectedValue, setSelectedValue] = useState(""); // Lepsze jest użycie pustego stringa
   const [isOptionsVisible, setIsOptionsVisible] = useState(false);
-  const [quantitySelectedOption, setQuantitySelectedOption] =
-    useState("-wybierz-");
+  const [quantitySelectedOption, setQuantitySelectedOption] = useState(""); // Lepsze jest użycie pustego stringa
   const [localizationSelectedOption, setLocalizationSelectedOption] =
-    useState("-wybierz-");
+    useState(""); // Lepsze jest użycie pustego stringa
   const [clicked, setClicked] = useState({});
   const [formData, setFormData] = useState({});
   const [selectedItems, setSelectedItems] = useState([]);
 
   const handleNextClick = () => {
+    // Jeśli jesteśmy w kroku 4, zweryfikujmy dane
     if (step === 4) {
-      // Validate form data before proceeding
       const isValid = validateFormData();
       if (!isValid) return;
     }
@@ -38,8 +35,8 @@ const ToGiveBack = () => {
   };
 
   const validateFormData = () => {
-    const dateRegex = /^\d{2}-\d{2}-\d{4}$/; // DD-MM-YYYY format
-    const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/; // HH:MM format (24-hour clock)
+    const dateRegex = /^\d{2}-\d{2}-\d{4}$/;
+    const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/;
 
     if (!formData.date || !formData.date.match(dateRegex)) {
       alert("Invalid date format. Use DD-MM-YYYY.");
@@ -53,15 +50,8 @@ const ToGiveBack = () => {
   };
 
   return (
-    <section className="to-give-back">
-      {/* <div className="logged-home-warning">
-        <div className="logged-home-warning-content">
-          <WarningContent step={step} />
-        </div>
-      </div> */}
-
-      <div className="to-give-back-form">
-        {/* {step <= 4 && <h3 className="to-give-back-step">Krok {step}/4</h3>} */}
+    <section className="donation-process">
+      <div>
         {step === 1 && (
           <Step1
             selectedItems={selectedItems}
@@ -112,11 +102,6 @@ const ToGiveBack = () => {
           />
         )}
         {step === 6 && <Step6 />}
-        <NavigationButtons
-          step={step}
-          handleNextClick={handleNextClick}
-          handleBackClick={handleBackClick}
-        />
       </div>
     </section>
   );

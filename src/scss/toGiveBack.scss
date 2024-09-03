@@ -1,17 +1,16 @@
-.to-give-back {
+.donation-process {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* lub odpowiednia wysokość */
+  // height: 100vh; /* lub odpowiednia wysokość */
 }
-.logged-home-warning {
+.logged-warning-box {
   background-color: $warning-color;
-  height: 180px;
+  height: 179px;
+  padding-left: 142px;
 }
-.logged-home-warning-content {
-  padding-left: 125px;
-  padding: 50px 125px;
-}
+
 .logged-home-warning-title {
+  padding-top: 50px;
   font-size: 36px;
   color: #000;
   font-weight: 600;
@@ -22,24 +21,32 @@
   font-weight: 300;
 }
 
-.to-give-back-form {
+.donation-form,
+.donation-summary-form {
   padding-left: 142px;
+  padding-top: 36px;
+  padding-bottom: 50px;
   background-image: url(../assets/Background-Form.jpg);
   background-position: center;
   background-size: cover;
   height: 883px;
+  position: relative;
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
 }
-.to-give-back-step {
+.donation-step-indicator {
   font-size: 24px;
   color: $header-color;
-  padding-top: 36px;
 }
-.to-give-back-title {
+.donation-step-title,
+.donation-summary-title,
+.pickup-form-title {
   font-size: 36px;
   font-weight: 600;
   margin-top: 70px;
 }
-.to-give-back-form form {
+.donation-form form {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -49,15 +56,21 @@
   margin-top: 44px;
   // height: 100%;
 }
-.to-give-back-form label {
+.donation-items-selection {
+  margin-top: 50px;
+}
+.donation-item-label {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   font-size: 16px;
   cursor: pointer;
 }
+.quantity-selection {
+  @include flex;
+}
 
-.to-give-back-form input[type="checkbox"] {
+.donation-form input[type="checkbox"] {
   margin-right: 30px;
   width: 40px;
   height: 40px;
@@ -65,19 +78,32 @@
   border: 0.75px solid $header-color;
 }
 
-.to-give-back-form input[type="checkbox"]:checked {
+.donation-form input[type="checkbox"]:checked {
   background-color: $warning-color;
 }
-.to-give-back-button-container {
-  padding-top: 185px;
-  padding-bottom: 73px;
-}
-.to-give-back-button {
-  font-size: 24px;
-  // padding: 23px 63px;
+// .to-give-back-button-container {
+//   padding-top: 185px;
+//   padding-bottom: 73px;
+// }
 
+.form-navigation-buttons {
+  margin-top: auto;
+}
+
+.navigation-button-next,
+.navigation-button-back,
+.navigation-button-confirm {
+  padding: 10px 15px;
+  border: 1px solid $header-color;
+  color: #000;
+  cursor: pointer;
+  font-size: 24px;
   &:hover {
     border: 1px solid $header-color;
+  }
+
+  &:first-of-type {
+    margin-right: 50px;
   }
 }
 
@@ -85,6 +111,7 @@
   display: flex;
 }
 .quantity-select-label {
+  padding-right: 50px;
   margin-bottom: 8px;
   font-weight: bold;
 }
@@ -107,31 +134,31 @@
   width: 50px;
 }
 
-.box {
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
+.quantity-box {
   display: flex;
+  gap: 26px;
 }
-.select_box {
+
+.select-box {
   display: flex;
-  width: 250px;
+  width: 300px;
+  height: 50px;
   border: 1px solid $header-color;
   font-size: 25px;
   color: $header-color;
   padding: 15px 20px;
   cursor: pointer;
+  align-items: center;
   position: relative;
   background-image: url(../assets/Icon-Arrow-Down.svg);
   background-repeat: no-repeat;
-  // background-size: cover;
   background-position: center right;
 }
 
-.option_box-small {
+.options-dropdown {
   position: relative;
 }
-.option_box-small ul {
+.options-list {
   position: absolute;
   right: 0;
   top: 80px;
@@ -140,52 +167,43 @@
   border: 1px solid $header-color;
 }
 
-.option_box-small ul li {
+.options-list-item {
   list-style: none;
   font-size: 22px;
   color: $header-color;
-
   padding: 8px;
   margin: 8px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.option_box-large {
+.options-dropdown-large {
   position: relative;
 }
-.option_box-large ul {
+.options-list {
   position: absolute;
   right: 0;
   top: 80px;
   margin-top: 10px;
-  width: 250px;
+  width: 75px;
   border: 1px solid $header-color;
 }
 
-.option_box-large ul li {
+.options-list-item {
   list-style: none;
   font-size: 22px;
   color: $header-color;
-
   padding: 8px;
   margin: 8px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.to-give-back-form {
-  position: relative;
-}
-
 .help-box {
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
   display: flex;
   flex-direction: column;
 }
-.help-select_box {
+.help-select-box {
   display: flex;
   width: 250px;
   border: 1px solid $header-color;
@@ -196,33 +214,38 @@
   position: relative;
   background-image: url(../assets/Icon-Arrow-Down.svg);
   background-repeat: no-repeat;
-  // background-size: cover;
   background-position: center right;
+}
+.donation-step-container,
+.quantity-selection-container {
+  height: 100%;
+  flex-direction: column;
+  display: flex;
 }
 
 .help-content {
   margin-top: 50px;
 }
-.help-options {
+.aid-options {
   display: flex;
   width: 520px;
   flex-wrap: wrap;
   gap: 24px;
 }
-.help-options-option {
-  border: 1px solid $header-color;
-  padding: 11px 26px;
+.aid-option {
+  border: 0.75px solid $header-color;
+  padding: 11px 20px;
 
   &:hover {
     cursor: pointer;
   }
 }
-.help-options-option.active {
-  background-color: yellow;
+.aid-option.active {
+  background-color: #fad648;
 }
-.help-options-textarea {
+.aid-organization-textarea {
 }
-.help-options-textarea textarea {
+.aid-organization-textarea textarea {
   width: 570px;
   height: 40px;
   border: 1px solid $header-color;
@@ -230,52 +253,98 @@
   font-size: 26px;
 }
 
-/* src/components/HelpStep4.css */
 .pickup-form {
   display: flex;
   flex-direction: column;
+  width: 900px;
 }
-
+.form-columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // flex-direction: column;
+  width: 100%;
+}
 .form-group {
-  margin-bottom: 15px;
+  width: 400px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .form-group label {
   margin-bottom: 5px;
+  margin-right: 5px;
+  text-align: start;
 }
 
 .form-group input {
   padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  text-align: start;
+  border: 0.75px solid $header-color;
+  width: 250px;
+}
+.form-group textarea {
+  padding: 8px;
+  text-align: start;
+  border: 0.75px solid $header-color;
+  width: 250px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  overflow: hidden;
 }
 
-/* src/components/HelpStep5.css */
-.confirmation {
-  padding: 20px;
+.donation-items-title,
+.pickup-address-title,
+.pickup-schedule-title,
+.pickup-time-title,
+.aid-description-title {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  font-size: 24px;
+  color: #000;
+  font-weight: 600;
+  text-align: start;
 }
-
-.confirmation p {
-  margin: 10px 0;
-  font-size: 16px;
+.donation-confirmation-header {
+  @include flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-
-/* src/components/HelpNavigationButtons.css */
-.navigation-buttons {
+.donation-icon-items {
+  background-image: url(../assets/Icon-1.svg);
+  height: 50px;
+  width: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+}
+.donation-icon-location {
+  background-image: url(../assets/Icon-4.svg);
+  height: 50px;
+  width: 50px;
+  background-size: contain;
+  margin-right: 20px;
+}
+.donation-confirmation-description {
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+.donation-confirmation-columns {
+  display: flex;
+}
+.donation-confirmation-column {
+  width: 300px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
-.navigation-buttons button {
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.navigation-buttons button:hover {
-  background-color: #0056b3;
+.pickup-schedule-column p {
+  font-size: 24px;
+  font-weight: 300;
 }

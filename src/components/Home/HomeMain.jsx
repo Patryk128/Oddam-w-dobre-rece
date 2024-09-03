@@ -25,7 +25,7 @@ const HomeMain = () => {
 
   const handleOrganizeClick = () => {
     if (user.isLoggedIn) {
-      navigate("/main"); // Zakładając, że jest to ta sama strona; zmień, jeśli potrzebna inna strona
+      navigate("/main");
     } else {
       navigate("/login");
     }
@@ -45,10 +45,14 @@ const HomeMain = () => {
             <div className="header-border"></div>
             <div className="header-btns">
               <button className="header-btn" onClick={handleGiveAwayClick}>
-                ODDAJ RZECZY
+                ODDAJ
+                <br />
+                RZECZY
               </button>
               <button className="header-btn" onClick={handleOrganizeClick}>
-                ZORGANIZUJ ZBIÓRKĘ
+                ZORGANIZUJ
+                <br />
+                ZBIÓRKĘ
               </button>
             </div>
           </div>

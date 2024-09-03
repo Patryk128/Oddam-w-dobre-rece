@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home.jsx";
-import Login from "./components/Login.jsx";
-import Register from "./components/Register.jsx";
-import Logout from "./components/Logout.jsx";
-import HomeLoggedIn from "./components/Home/HomeLoggedIn.jsx";
+import Login from "./components/Auth/Login.jsx";
+import Register from "./components/Auth/Register.jsx";
+import Logout from "./components/Auth/Logout.jsx";
+import HomeLoggedIn from "./components/LoggedIn/HomeLoggedIn.jsx";
+import Error404 from "./components/Home/Error404.jsx";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/main" element={<HomeLoggedIn />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </Router>
   );

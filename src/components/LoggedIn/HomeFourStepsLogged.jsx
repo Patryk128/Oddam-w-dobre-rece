@@ -6,7 +6,6 @@ const HomeFourStepsLogged = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Odczytujemy dane użytkownika z localStorage
   const [user, setUser] = useState(() => {
     const userData = JSON.parse(localStorage.getItem("user")) || {};
     return {
@@ -16,17 +15,15 @@ const HomeFourStepsLogged = () => {
   });
 
   useEffect(() => {
-    // Sprawdzamy, czy użytkownik jest zalogowany, jeśli nie, przekierowujemy na stronę wylogowania
     if (!user.isLoggedIn) {
       navigate("/logout");
     }
   }, [user.isLoggedIn, navigate]);
 
   const handleLogout = () => {
-    // Funkcja wylogowująca użytkownika i ustawiająca stan jako niezalogowany
     localStorage.removeItem("user");
     setUser({ isLoggedIn: false, email: "" });
-    navigate("/logout"); // Przekierowujemy na stronę wylogowania
+    navigate("/logout");
   };
 
   return (

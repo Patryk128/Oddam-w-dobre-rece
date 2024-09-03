@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import HomeHeader from "./Home/HomeHeader";
+import HomeHeader from "../Home/HomeHeader";
 import { Link } from "react-router-dom";
 
 const Logout = () => {
   useEffect(() => {
-    // Clear user data on logout
     localStorage.removeItem("user");
   }, []);
 

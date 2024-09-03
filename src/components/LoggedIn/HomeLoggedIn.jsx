@@ -1,7 +1,7 @@
 import React from "react";
 import { Element } from "react-scroll";
 import HomeFourStepsLogged from "./HomeFourStepsLogged";
-import Contact from "./Contact";
+import Contact from "../Home/Contact";
 import ToGiveBack from "./ToGiveBack";
 
 const HomeLoggedIn = () => {

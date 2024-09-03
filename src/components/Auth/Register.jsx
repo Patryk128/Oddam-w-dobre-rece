@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import HomeHeader from "./Home/HomeHeader";
+import HomeHeader from "../Home/HomeHeader";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "./firebaseConfig"; // Import Firebase auth
+import { auth } from "../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = () => {
@@ -14,7 +14,7 @@ const Register = () => {
     confirmPassword: "",
   });
 
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -48,7 +48,7 @@ const Register = () => {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           console.log("User registered:", userCredential.user);
-          navigate("/home"); // Redirect to home component
+          navigate("/home");
         })
         .catch((error) => {
           console.error("Error registering user:", error.message);
