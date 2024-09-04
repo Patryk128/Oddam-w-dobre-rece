@@ -8,6 +8,7 @@ const Step5 = ({
   clicked,
   handleNextClick,
   handleBackClick,
+  organizationName,
 }) => {
   return (
     <div className="donation-summary-form">
@@ -23,7 +24,7 @@ const Step5 = ({
         </p>
         <p className="donation-confirmation-description">
           <div className="donation-icon-location"></div>
-          dla lokalizacji: {localizationSelectedOption},
+          dla lokalizacji: {localizationSelectedOption}, {organizationName}
         </p>
       </div>
 

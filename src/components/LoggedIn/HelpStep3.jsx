@@ -9,8 +9,11 @@ const Step3 = ({
   setClicked,
   handleNextClick,
   handleBackClick,
+  organizationName,
+  setOrganizationName, // Nowy prop do ustawiania nazwy organizacji
 }) => {
-  const [error, setError] = useState("");
+  const [localizationError, setLocalizationError] = useState("");
+  const [aidError, setAidError] = useState("");
 
   const handleLocalizationSelectClick = () =>
     setIsOptionsVisible(!isOptionsVisible);
@@ -18,7 +21,7 @@ const Step3 = ({
   const handleLocalizationOptionClick = (option) => {
     setLocalizationSelectedOption(option);
     setIsOptionsVisible(false);
-    setError(""); // Czyszczenie błędu po wybraniu opcji
+    setLocalizationError(""); // Czyszczenie błędu po wybraniu opcji lokalizacji
   };
 
   const handleClick = (option) => {
@@ -26,23 +29,38 @@ const Step3 = ({
       ...prevClicked,
       [option]: !prevClicked[option],
     }));
-    setError(""); // Czyszczenie błędu po kliknięciu opcji pomocy
+    setAidError(""); // Czyszczenie błędu po kliknięciu opcji pomocy
   };
 
   const handleNextClickInternal = () => {
     const hasSelectedAidOption = Object.values(clicked).some((value) => value);
 
+    let hasError = false;
+
     if (
       !localizationSelectedOption ||
       localizationSelectedOption === "-wybierz-"
     ) {
-      setError("Proszę wybrać lokalizację przed przejściem dalej.");
-    } else if (!hasSelectedAidOption) {
-      setError("Proszę wybrać co najmniej jedną opcję, komu chcesz pomóc.");
+      setLocalizationError("Proszę wybrać lokalizację przed przejściem dalej.");
+      hasError = true;
     } else {
-      setError(""); // Czyszczenie błędu przed przejściem dalej
+      setLocalizationError(""); // Czyszczenie błędu lokalizacji
+    }
+
+    if (!hasSelectedAidOption) {
+      setAidError("Proszę wybrać co najmniej jedną opcję, komu chcesz pomóc.");
+      hasError = true;
+    } else {
+      setAidError(""); // Czyszczenie błędu pomocy
+    }
+
+    if (!hasError) {
       handleNextClick(); // Wywołanie oryginalnego handleNextClick
     }
+  };
+
+  const handleOrganizationNameChange = (e) => {
+    setOrganizationName(e.target.value); // Ustawienie nazwy organizacji w stanie nadrzędnym
   };
 
   return (
@@ -82,6 +100,9 @@ const Step3 = ({
                 </ul>
               </div>
             )}
+            {localizationError && (
+              <p className="error-message">{localizationError}</p>
+            )}
           </div>
           <h3 className="aid-description-title">Komu chcesz pomóc?</h3>
           <div className="aid-options">
@@ -101,13 +122,17 @@ const Step3 = ({
               </div>
             ))}
           </div>
-          {error && <p className="error-message">{error}</p>}{" "}
-          {/* Wyświetlanie błędu */}
+          {aidError && <p className="error-message">{aidError}</p>}
           <div className="aid-organization-textarea">
             <h3 className="aid-description-title">
               Wpisz nazwę konkretnej organizacji (opcjonalnie)
             </h3>
-            <textarea name="aid" id="aid"></textarea>
+            <textarea
+              name="aid"
+              id="aid"
+              value={organizationName}
+              onChange={handleOrganizationNameChange} // Obsługa zmian w polu tekstowym
+            ></textarea>
           </div>
           <div className="form-navigation-buttons">
             <button

@@ -16,6 +16,7 @@ const ToGiveBack = () => {
   const [clicked, setClicked] = useState({});
   const [formData, setFormData] = useState({});
   const [selectedItems, setSelectedItems] = useState([]);
+  const [organizationName, setOrganizationName] = useState("");
 
   const handleNextClick = () => {
     // Jeśli jesteśmy w kroku 4, zweryfikujmy dane
@@ -81,6 +82,7 @@ const ToGiveBack = () => {
             setClicked={setClicked}
             handleNextClick={handleNextClick}
             handleBackClick={handleBackClick}
+            setOrganizationName={setOrganizationName}
           />
         )}
         {step === 4 && (
@@ -99,6 +101,7 @@ const ToGiveBack = () => {
             clicked={clicked}
             handleNextClick={handleNextClick}
             handleBackClick={handleBackClick}
+            organizationName={organizationName}
           />
         )}
         {step === 6 && <Step6 />}

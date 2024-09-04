@@ -32,7 +32,7 @@
   height: 883px;
   position: relative;
   display: flex;
-  // justify-content: center;
+  justify-content: center;
   flex-direction: column;
 }
 .donation-step-indicator {
@@ -45,6 +45,17 @@
   font-size: 36px;
   font-weight: 600;
   margin-top: 70px;
+}
+.summary-text {
+  font-size: 40px;
+  color: $header-color;
+  margin-bottom: 25px;
+}
+.summary-content {
+  width: 630px;
+  text-align: center;
+  @include flex;
+  flex-direction: column;
 }
 .donation-form form {
   display: flex;
