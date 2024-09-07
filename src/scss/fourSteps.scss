@@ -20,7 +20,8 @@
   height: 325px;
   margin: 35px 0;
   @include flex;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
+  gap: 200px;
 }
 .four-steps-single {
   @include flex;
@@ -53,9 +54,4 @@
   text-align: center;
   font-size: 16px;
   color: $header-color;
-}
-.four-steps {
-  button {
-    margin: 0;
-  }
 }

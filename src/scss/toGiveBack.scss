@@ -77,6 +77,7 @@
   font-size: 16px;
   cursor: pointer;
 }
+.location-selection,
 .quantity-selection {
   @include flex;
 }
@@ -145,15 +146,16 @@
   width: 50px;
 }
 
+.location-box,
 .quantity-box {
   display: flex;
-  gap: 26px;
+  position: relative;
+  width: 300px;
 }
 
 .select-box {
   display: flex;
   width: 300px;
-  height: 50px;
   border: 1px solid $header-color;
   font-size: 25px;
   color: $header-color;
@@ -167,15 +169,11 @@
 }
 
 .options-dropdown {
-  position: relative;
-}
-.options-list {
   position: absolute;
+  top: 100%;
   right: 0;
-  top: 80px;
-  margin-top: 10px;
-  width: 75px;
-  border: 1px solid $header-color;
+  margin-top: 15px;
+  background-color: #e8e9e4;
 }
 
 .options-list-item {
@@ -189,14 +187,19 @@
 }
 
 .options-dropdown-large {
-  position: relative;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 15px;
+  background-color: #e8e9e4;
 }
 .options-list {
-  position: absolute;
-  right: 0;
-  top: 80px;
-  margin-top: 10px;
   width: 75px;
+  border: 1px solid $header-color;
+}
+
+.options-list-large {
+  width: 300px;
   border: 1px solid $header-color;
 }
 
@@ -227,11 +230,12 @@
   background-repeat: no-repeat;
   background-position: center right;
 }
-.donation-step-container,
+.location-selection-container,
 .quantity-selection-container {
   height: 100%;
   flex-direction: column;
   display: flex;
+  margin-top: 20px;
 }
 
 .help-content {
@@ -358,4 +362,7 @@
 .pickup-schedule-column p {
   font-size: 24px;
   font-weight: 300;
+}
+.donation-summary-btn {
+  margin-top: 35px;
 }

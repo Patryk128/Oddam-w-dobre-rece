@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import HomeHeader from "../Home/HomeHeader";
-import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebaseConfig";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -47,8 +47,14 @@ const Register = () => {
     if (valid) {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          console.log("User registered:", userCredential.user);
-          navigate("/home");
+          const user = userCredential.user;
+          const userData = {
+            isLoggedIn: true,
+            email: user.email,
+          };
+          localStorage.setItem("user", JSON.stringify(userData));
+          // Przekierowanie na tę samą stronę co po zalogowaniu
+          navigate("/", { state: { email: user.email } });
         })
         .catch((error) => {
           console.error("Error registering user:", error.message);

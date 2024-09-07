@@ -64,7 +64,7 @@ const Step3 = ({
   };
 
   return (
-    <div className="donation-process">
+    <>
       <div className="alert-box">
         <h2 className="alert-title">Ważne!</h2>
         <p className="alert-description">
@@ -73,19 +73,25 @@ const Step3 = ({
           celu ich pomocy.
         </p>
       </div>
+
       <div className="donation-form">
-        <div className="donation-step-container">
-          <p className="donation-step-indicator">Krok 3/4</p>
-          <h2 className="donation-step-title">Lokalizacja</h2>
-          <div className="localization-selection-box">
-            <div className="select-box" onClick={handleLocalizationSelectClick}>
-              <p className="selected-localization">
-                {localizationSelectedOption || "Wybierz lokalizację"}
-              </p>
+        <p className="donation-step-indicator">Krok 3/4</p>
+        <h2 className="donation-step-title">Lokalizacja</h2>
+        <div className="location-selection-container">
+          <div className="location-box">
+            <div className="location-selection">
+              <div
+                className="select-box"
+                onClick={handleLocalizationSelectClick}
+              >
+                <p className="selected-location">
+                  {localizationSelectedOption || "--wybierz--"}
+                </p>
+              </div>
             </div>
             {isOptionsVisible && (
               <div className="options-dropdown-large">
-                <ul className="options-list">
+                <ul className="options-list-large">
                   {["Poznań", "Warszawa", "Kraków", "Wrocław", "Katowice"].map(
                     (option) => (
                       <li
@@ -104,6 +110,7 @@ const Step3 = ({
               <p className="error-message">{localizationError}</p>
             )}
           </div>
+
           <h3 className="aid-description-title">Komu chcesz pomóc?</h3>
           <div className="aid-options">
             {[
@@ -123,6 +130,7 @@ const Step3 = ({
             ))}
           </div>
           {aidError && <p className="error-message">{aidError}</p>}
+
           <div className="aid-organization-textarea">
             <h3 className="aid-description-title">
               Wpisz nazwę konkretnej organizacji (opcjonalnie)
@@ -131,9 +139,10 @@ const Step3 = ({
               name="aid"
               id="aid"
               value={organizationName}
-              onChange={handleOrganizationNameChange} // Obsługa zmian w polu tekstowym
+              onChange={handleOrganizationNameChange}
             ></textarea>
           </div>
+
           <div className="form-navigation-buttons">
             <button
               type="button"
@@ -152,7 +161,7 @@ const Step3 = ({
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

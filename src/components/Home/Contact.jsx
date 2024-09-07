@@ -103,6 +103,7 @@ const ContactForm = () => {
                 type="text"
                 id="name"
                 name="name"
+                placeholder="Wpisz swoje imię"
                 value={formData.name}
                 onChange={handleChange}
                 className={errors.name ? "error" : ""}
@@ -117,6 +118,7 @@ const ContactForm = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                placeholder="Wpisz swój email"
                 className={errors.email ? "error" : ""}
               />
               {errors.email && <p className="error-message">{errors.email}</p>}
@@ -130,6 +132,8 @@ const ContactForm = () => {
               rows="4"
               value={formData.message}
               onChange={handleChange}
+              maxLength={200}
+              placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae praesentium quibusdam deleniti voluptate quo quam quae, distinctio quisquam accusamus consectetur dolore consequuntur."
               className={errors.message ? "error" : ""}
             />
             {errors.message && (

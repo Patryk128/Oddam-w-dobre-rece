@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   margin-top: 80px;
-  width: 1900px;
+  // width: 1900px;
   height: 1052px;
 }
 .contact-img {
@@ -52,12 +52,16 @@
   display: block;
   margin-bottom: 12px;
   color: $header-color;
+  font-weight: 600;
 }
 
 .contact-input textarea {
   width: 530px;
   border-radius: 4px;
   box-sizing: border-box;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  // overflow: hidden;
 }
 
 .button-container {

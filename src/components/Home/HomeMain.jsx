@@ -33,31 +33,29 @@ const HomeMain = () => {
 
   return (
     <div className="header container">
-      <main>
-        <div className="header-image"></div>
-        <div className="header-main">
-          <div className="header-content">
-            <h2 className="header-title">
-              Zacznij pomagać!
+      <div className="header-image"></div>
+      <div className="header-main">
+        <div className="header-content">
+          <h2 className="header-title">
+            Zacznij pomagać!
+            <br />
+            Oddaj niechciane rzeczy w zaufane ręce
+          </h2>
+          <div className="header-border"></div>
+          <div className="header-btns">
+            <button className="header-btn" onClick={handleGiveAwayClick}>
+              ODDAJ
               <br />
-              Oddaj niechciane rzeczy w zaufane ręce
-            </h2>
-            <div className="header-border"></div>
-            <div className="header-btns">
-              <button className="header-btn" onClick={handleGiveAwayClick}>
-                ODDAJ
-                <br />
-                RZECZY
-              </button>
-              <button className="header-btn" onClick={handleOrganizeClick}>
-                ZORGANIZUJ
-                <br />
-                ZBIÓRKĘ
-              </button>
-            </div>
+              RZECZY
+            </button>
+            <button className="header-btn" onClick={handleOrganizeClick}>
+              ZORGANIZUJ
+              <br />
+              ZBIÓRKĘ
+            </button>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 };

@@ -1,55 +1,96 @@
 .logged-four-steps {
-  width: 1900px;
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #fff;
+  width: 100%;
+  height: 900px;
   padding-right: 142px;
 }
 
 .logged-four-steps-img {
-  background-image: url(../assets/Form-Hero-Image.jpg);
-  background-position: center;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 70%, #ffffff),
+    url(../assets/Form-Hero-Image.jpg) left center no-repeat;
+  background-position: left center;
   background-size: cover;
-  width: 1000px;
-  height: 850px;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 100%;
 }
+
 .logged-four-steps-content {
-  width: 100%;
+  width: 50%;
+  height: 100%;
+  @include column;
+  padding-left: 50px;
 }
 .logged-four-steps-form {
-  margin-top: 135px;
-  @include flex;
-  flex-direction: column;
-  text-align: center;
+  padding-top: 134px;
+  @include column;
 }
+
 .logged-four-steps-title {
   font-size: 38px;
-  color: $header-color;
+  color: #333;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
-.logged-four-steps-descrition {
+
+.logged-four-steps-description {
   font-size: 40px;
   font-weight: 300;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
+  margin-top: 35px;
+  text-align: left;
 }
+
 .logged-four-steps-steps {
-  @include flex;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
+
 .logged-four-steps-step {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1px solid $header-color;
-  width: 190px;
-  height: 190px;
+  border: 1px solid #333;
+  width: 150px;
+  height: 150px;
+  font-size: 20px;
+  color: #333;
   rotate: 45deg;
   text-align: center;
-  font-size: 22px;
-  color: $header-color;
 }
+
 .logged-four-steps-step span {
-  rotate: 315deg;
+  rotate: -45deg;
 }
+
 .logged-four-steps-step p {
   margin-top: 10px;
+}
+
+.logged-header-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.logged-header-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.logged-header-nav ul li {
+  font-size: 18px;
+}
+
+.logged-header-button {
+  margin-left: 15px;
+  padding: 10px 20px;
+  border: 1px solid #333;
+  cursor: pointer;
 }

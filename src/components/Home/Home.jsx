@@ -22,7 +22,7 @@ const Home = () => {
       <Element name="about-us">
         <HomeAboutUs />
       </Element>
-      <Element name="about-us">
+      <Element name="organizations">
         <Organizations name="organization" />
       </Element>
       <Element name="contact">

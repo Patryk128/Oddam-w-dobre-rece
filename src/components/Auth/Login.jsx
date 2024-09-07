@@ -92,15 +92,19 @@ const Login = () => {
               )}
             </div>
             {generalError && <div className="error">{generalError}</div>}
-            <div className="login-nav">
-              <button className="login-button login-button-register">
-                <Link to="/register">Załóż konto</Link>
-              </button>
-              <button type="submit" className="login-button login-button-login">
-                Zaloguj się
-              </button>
-            </div>
           </form>
+          <div className="login-nav">
+            <button className="login-button login-button-register">
+              <Link to="/register">Załóż konto</Link>
+            </button>
+            <button
+              type="button"
+              className="login-button login-button-login"
+              onClick={handleSubmit}
+            >
+              Zaloguj się
+            </button>
+          </div>
         </div>
       </section>
     </>

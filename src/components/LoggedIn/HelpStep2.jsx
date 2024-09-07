@@ -22,7 +22,7 @@ const Step2 = ({
   };
 
   const handleNextClickInternal = () => {
-    if (!quantitySelectedOption || quantitySelectedOption === "-wybierz-") {
+    if (!quantitySelectedOption) {
       setError("Proszę wybrać liczbę worków przed przejściem dalej.");
     } else {
       setError(""); // Czyszczenie błędu przed przejściem dalej
@@ -48,11 +48,10 @@ const Step2 = ({
         <div className="quantity-selection-container">
           <div className="quantity-box">
             <div className="quantity-selection">
-              <label htmlFor="quantity" className="quantity-select-label">
-                Liczba 60l worków:
-              </label>
               <div className="select-box" onClick={handleQuantitySelectClick}>
-                <p className="selected-quantity">{quantitySelectedOption}</p>
+                <p className="selected-quantity">
+                  {quantitySelectedOption || "--wybierz--"}
+                </p>
               </div>
             </div>
             {isOptionsVisible && (
@@ -72,7 +71,6 @@ const Step2 = ({
             )}
           </div>
           {error && <p className="error-message">{error}</p>}{" "}
-          {/* Wyświetlanie błędu */}
           <div className="form-navigation-buttons">
             <button
               type="button"

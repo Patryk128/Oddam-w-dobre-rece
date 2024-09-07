@@ -1,8 +1,8 @@
 .login {
-  display: flex;
-  flex-direction: column;
+  @include column;
   align-items: center;
   margin-top: 50px;
+  height: 90vh;
 }
 
 .login-header {
