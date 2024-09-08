@@ -65,16 +65,16 @@ const Step3 = ({
 
   return (
     <>
-      <div className="alert-box">
-        <h2 className="alert-title">Ważne!</h2>
-        <p className="alert-description">
+      <div className="alert">
+        <h2 className="alert__title">Ważne!</h2>
+        <p className="alert__description">
           Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w
           wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź
           celu ich pomocy.
         </p>
       </div>
 
-      <div className="donation-form">
+      <div className="donation__form">
         <p className="donation-step-indicator">Krok 3/4</p>
         <h2 className="donation-step-title">Lokalizacja</h2>
         <div className="location-selection-container">
@@ -143,17 +143,17 @@ const Step3 = ({
             ></textarea>
           </div>
 
-          <div className="form-navigation-buttons">
+          <div className="summary__buttons">
             <button
               type="button"
-              className="navigation-button-back"
+              className="summary__button navigation__button--back"
               onClick={handleBackClick}
             >
               Wstecz
             </button>
             <button
               type="button"
-              className="navigation-button-next"
+              className="summary__button navigation__button--next"
               onClick={handleNextClickInternal}
             >
               Dalej

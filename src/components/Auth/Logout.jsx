@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import HomeHeader from "../Home/HomeHeader";
 import { Link } from "react-router-dom";
+import AuthHeader from "./AuthHeader";
 
 const Logout = () => {
   useEffect(() => {
@@ -9,7 +9,7 @@ const Logout = () => {
 
   return (
     <>
-      <HomeHeader />
+      <AuthHeader />
       <div className="logout">
         <div className="logout-container">
           <h2 className="logout-title">

@@ -11,51 +11,72 @@ const Step5 = ({
   organizationName,
 }) => {
   return (
-    <div className="donation-summary-form">
-      <h2 className="donation-summary-title">Podsumowanie Twojej darowizny</h2>
-      <div className="donation-confirmation-header">
-        <h3 className="donation-items-title">Oddajesz: </h3>
-        <p className="donation-confirmation-description">
-          <div className="donation-icon-items"></div>
+    <div className="summary">
+      <h2 className="summary__title">Podsumowanie Twojej darowizny</h2>
+      <div className="summary__details">
+        <h3 className="summary__items-heading">Oddajesz: </h3>
+        <p className="summary__items-description">
+          <div className="summary__icon summary__icon--items"></div>
           {quantitySelectedOption} worki, {selectedItems.join(", ")},{" "}
           {Object.keys(clicked)
             .filter((key) => clicked[key])
             .join(", ")}
         </p>
-        <p className="donation-confirmation-description">
-          <div className="donation-icon-location"></div>
+        <p className="summary__location-description">
+          <div className="summary__icon summary__icon--location"></div>
           dla lokalizacji: {localizationSelectedOption}, {organizationName}
         </p>
       </div>
 
-      <div className="donation-confirmation-columns">
-        <div className="donation-confirmation-column">
-          <h3 className="pickup-address-title">Adres odbioru</h3>
-          <p>Ulica: {formData.street}</p>
-          <p>Miasto: {formData.city}</p>
-          <p>Kod pocztowy: {formData.postalCode}</p>
-          <p>Numer telefonu: {formData.phoneNumber}</p>
+      <div className="summary__columns">
+        <div className="summary__column summary__column--pickup-address">
+          <h3 className="summary__column-heading">Adres odbioru</h3>
+          <div className="summary__field">
+            <p className="summary__field-label">Ulica</p>
+            <p className="summary__field-value">{formData.street}</p>
+          </div>
+          <div className="summary__field">
+            <p className="summary__field-label">Miasto</p>
+            <p className="summary__field-value">{formData.city}</p>
+          </div>
+          <div className="summary__field">
+            <p className="summary__field-label">Kod pocztowy</p>
+            <p className="summary__field-value">{formData.postalCode}</p>
+          </div>
+          <div className="summary__field">
+            <p className="summary__field-label">Numer telefonu</p>
+            <p className="summary__field-value">{formData.phoneNumber}</p>
+          </div>
         </div>
 
-        <div className="pickup-schedule-column">
-          <h3 className="pickup-schedule-title">Termin odbioru</h3>
-          <p>Data: {formData.date}</p>
-          <p>Godzina: {formData.time}</p>
-          <p>Uwagi dla kuriera: {formData.notes}</p>
+        <div className="summary__column summary__column--pickup-schedule">
+          <h3 className="summary__column-heading">Termin odbioru</h3>
+          <div className="summary__field">
+            <p className="summary__field-label">Data</p>
+            <p className="summary__field-value">{formData.date}</p>
+          </div>
+          <div className="summary__field">
+            <p className="summary__field-label">Godzina</p>
+            <p className="summary__field-value">{formData.time}</p>
+          </div>
+          <div className="summary__field">
+            <p className="summary__field-label">Uwagi dla kuriera</p>
+            <p className="summary__field-value">{formData.notes}</p>
+          </div>
         </div>
       </div>
 
-      <div className="form-navigation-buttons">
+      <div className="summary__buttons">
         <button
           type="button"
-          className="navigation-button-back"
+          className="summary__button navigation__button--back"
           onClick={handleBackClick}
         >
           Wstecz
         </button>
         <button
           type="button"
-          className="navigation-button-confirm"
+          className="summary__button navigation__button--confirm"
           onClick={handleNextClick}
         >
           Potwierdzam

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import HomeHeader from "../Home/HomeHeader";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
+import AuthHeader from "./AuthHeader";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -55,7 +55,7 @@ const Login = () => {
 
   return (
     <>
-      <HomeHeader />
+      <AuthHeader />
       <section className="login">
         <div className="login-header">
           <h2 className="login-title">Zaloguj się</h2>

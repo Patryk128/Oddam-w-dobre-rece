@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import HomeHeader from "../Home/HomeHeader";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
+import AuthHeader from "./AuthHeader";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -71,7 +71,7 @@ const Register = () => {
 
   return (
     <>
-      <HomeHeader />
+      <AuthHeader />
       <section className="register">
         <div className="register-header">
           <h2 className="register-title">Załóż konto</h2>

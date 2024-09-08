@@ -61,7 +61,7 @@ const HomeFourSteps = () => {
             </div>
           </div>
         </div>
-        <button className="header-btn" onClick={handleGiveAwayClick}>
+        <button className="main__button" onClick={handleGiveAwayClick}>
           ODDAJ
           <br />
           RZECZY

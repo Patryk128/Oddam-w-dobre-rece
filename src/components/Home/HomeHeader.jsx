@@ -75,7 +75,7 @@ const HomeHeader = () => {
         <ul className="header-nav-nav">
           <li>
             <Scroll to="start" smooth={true} duration={500} offset={-150}>
-              <Link to="/home">Start</Link>
+              Start
             </Scroll>
           </li>
           <li>

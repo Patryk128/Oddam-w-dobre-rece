@@ -5,20 +5,20 @@ const Step6 = () => {
   const navigate = useNavigate();
 
   const handleScrollHome = () => {
-    window.scrollTo(0, 0); // przewinięcie na górę strony
-    navigate("/home"); // przeniesienie na stronę główną
+    window.scrollTo(0, 0);
+    navigate("/home");
   };
 
   return (
-    <div className="donation-summary-form">
-      <div className="summary-content">
-        <p className="summary-text">
+    <div className="thank-you">
+      <div className="thank-you__content">
+        <p className="thank-you__message">
           Dziękujemy za przesłanie formularza. Na maila prześlemy wszelkie
           informacje o odbiorze.
         </p>
         <div className="header-border"></div>
         <button
-          className="header-btn donation-summary-btn"
+          className="main__button thank-you__button"
           onClick={handleScrollHome}
         >
           STRONA GŁÓWNA

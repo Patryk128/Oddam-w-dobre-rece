@@ -90,7 +90,7 @@ const ContactForm = () => {
         <h2 className="contact-title">Skontaktuj się z nami</h2>
         <div className="header-border"></div>
         {submissionStatus === "success" && (
-          <p className="success-message">
+          <p className="success__message">
             Wiadomość została wysłana!
             <br /> Wkrótce się skontaktujemy.
           </p>
@@ -108,7 +108,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 className={errors.name ? "error" : ""}
               />
-              {errors.name && <p className="error-message">{errors.name}</p>}
+              {errors.name && <p className="error__message">{errors.name}</p>}
             </div>
             <div className="contact-input">
               <label htmlFor="email">Wpisz swój email</label>
@@ -121,7 +121,7 @@ const ContactForm = () => {
                 placeholder="Wpisz swój email"
                 className={errors.email ? "error" : ""}
               />
-              {errors.email && <p className="error-message">{errors.email}</p>}
+              {errors.email && <p className="error__message">{errors.email}</p>}
             </div>
           </div>
           <div className="contact-input contact-input-textarea">
@@ -137,7 +137,7 @@ const ContactForm = () => {
               className={errors.message ? "error" : ""}
             />
             {errors.message && (
-              <p className="error-message">{errors.message}</p>
+              <p className="error__message">{errors.message}</p>
             )}
           </div>
           <div className="button-container">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const HomeMain = () => {
   const [user, setUser] = useState({
@@ -43,12 +43,12 @@ const HomeMain = () => {
           </h2>
           <div className="header-border"></div>
           <div className="header-btns">
-            <button className="header-btn" onClick={handleGiveAwayClick}>
+            <button className="main__button" onClick={handleGiveAwayClick}>
               ODDAJ
               <br />
               RZECZY
             </button>
-            <button className="header-btn" onClick={handleOrganizeClick}>
+            <button className="main__button" onClick={handleOrganizeClick}>
               ZORGANIZUJ
               <br />
               ZBIÓRKĘ

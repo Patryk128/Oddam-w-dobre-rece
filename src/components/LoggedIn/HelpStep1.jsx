@@ -33,16 +33,16 @@ const Step1 = ({ selectedItems, setSelectedItems, handleNextClick }) => {
 
   return (
     <div className="donation-process">
-      <div className="alert-box">
-        <h2 className="alert-title">Ważne!</h2>
-        <p className="alert-description">
+      <div className="alert">
+        <h2 className="alert__title">Ważne!</h2>
+        <p className="alert__description">
           Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
           wiedzieć komu najlepiej je przekazać.
         </p>
       </div>
-      <div className="donation-form">
+      <div className="donation__form">
         <div className="donation-step-container">
-          <p className="donation-step-indicator">Krok 1/4</p>
+          <p className="donation__step-indicator">Krok 1/4</p>
           <h2 className="donation-step-title">Zaznacz co chcesz oddać:</h2>
           <div className="donation-items-selection">
             {items.map((item, index) => (
@@ -58,10 +58,10 @@ const Step1 = ({ selectedItems, setSelectedItems, handleNextClick }) => {
           </div>
           {error && <p className="error-message">{error}</p>}{" "}
           {/* Wyświetlanie błędu */}
-          <div className="form-navigation-buttons">
+          <div className="summary__buttons">
             <button
               type="button"
-              className="navigation-button-next"
+              className="summary__button navigation__button--next"
               onClick={handleNextClickInternal}
             >
               Dalej

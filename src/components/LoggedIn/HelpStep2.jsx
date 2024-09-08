@@ -32,16 +32,16 @@ const Step2 = ({
 
   return (
     <>
-      <div className="alert-box">
-        <h2 className="alert-title">Ważne!</h2>
-        <p className="alert-description">
+      <div className="alert">
+        <h2 className="alert__title">Ważne!</h2>
+        <p className="alert__description">
           Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję
           jak poprawnie spakować rzeczy znajdziesz TUTAJ.
         </p>
       </div>
 
-      <div className="donation-form">
-        <p className="donation-step-indicator">Krok 2/4</p>
+      <div className="donation__form">
+        <p className="donation__step-indicator">Krok 2/4</p>
         <h2 className="donation-step-title">
           Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:
         </h2>
@@ -71,17 +71,17 @@ const Step2 = ({
             )}
           </div>
           {error && <p className="error-message">{error}</p>}{" "}
-          <div className="form-navigation-buttons">
+          <div className="summary__buttons">
             <button
               type="button"
-              className="navigation-button-back"
+              className="summary__button navigation__button--back"
               onClick={handleBackClick}
             >
               Wstecz
             </button>
             <button
               type="button"
-              className="navigation-button-next"
+              className="summary__button navigation__button--next"
               onClick={handleNextClickInternal}
             >
               Dalej

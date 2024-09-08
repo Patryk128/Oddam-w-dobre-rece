@@ -21,8 +21,9 @@
   font-weight: 300;
 }
 
-.donation-form,
-.donation-summary-form {
+.donation__form,
+.summary,
+.thank-you {
   padding-left: 142px;
   padding-top: 36px;
   padding-bottom: 50px;
@@ -35,29 +36,31 @@
   justify-content: center;
   flex-direction: column;
 }
-.donation-step-indicator {
+.donation__step-indicator {
   font-size: 24px;
   color: $header-color;
 }
 .donation-step-title,
-.donation-summary-title,
-.pickup-form-title {
+.summary__title,
+.pickup-form__title {
   font-size: 36px;
   font-weight: 600;
   margin-top: 70px;
 }
-.summary-text {
+.summary-text,
+.thank-you__message {
   font-size: 40px;
   color: $header-color;
   margin-bottom: 25px;
 }
-.summary-content {
+.summary-content,
+.thank-you__content {
   width: 630px;
   text-align: center;
   @include flex;
   flex-direction: column;
 }
-.donation-form form {
+.donation__form form {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -82,7 +85,7 @@
   @include flex;
 }
 
-.donation-form input[type="checkbox"] {
+.donation__form input[type="checkbox"] {
   margin-right: 30px;
   width: 40px;
   height: 40px;
@@ -90,7 +93,7 @@
   border: 0.75px solid $header-color;
 }
 
-.donation-form input[type="checkbox"]:checked {
+.donation__form input[type="checkbox"]:checked {
   background-color: $warning-color;
 }
 // .to-give-back-button-container {
@@ -98,13 +101,12 @@
 //   padding-bottom: 73px;
 // }
 
-.form-navigation-buttons {
+.summary__buttons {
   margin-top: auto;
 }
-
-.navigation-button-next,
-.navigation-button-back,
-.navigation-button-confirm {
+.navigation__button--back,
+.navigation__button--next,
+.navigation__button--confirm {
   padding: 10px 15px;
   border: 1px solid $header-color;
   color: #000;
@@ -273,14 +275,14 @@
   flex-direction: column;
   width: 900px;
 }
-.form-columns {
+.pickup-form__columns {
   display: flex;
   align-items: center;
   justify-content: space-between;
   // flex-direction: column;
   width: 100%;
 }
-.form-group {
+.form__group {
   width: 400px;
   margin-bottom: 20px;
   display: flex;
@@ -289,19 +291,19 @@
   flex-direction: column;
 }
 
-.form-group label {
+.form__group label {
   margin-bottom: 5px;
   margin-right: 5px;
   text-align: start;
 }
 
-.form-group input {
+.form__group input {
   padding: 8px;
   text-align: start;
   border: 0.75px solid $header-color;
   width: 250px;
 }
-.form-group textarea {
+.form__group textarea {
   padding: 8px;
   text-align: start;
   border: 0.75px solid $header-color;
@@ -311,10 +313,10 @@
   overflow: hidden;
 }
 
-.donation-items-title,
-.pickup-address-title,
-.pickup-schedule-title,
-.pickup-time-title,
+.summary__items-heading,
+.summary__column-head,
+.summary__column-heading,
+.pickup-form__section-title,
 .aid-description-title {
   padding-top: 50px;
   padding-bottom: 30px;
@@ -323,12 +325,12 @@
   font-weight: 600;
   text-align: start;
 }
-.donation-confirmation-header {
+.summary__details {
   @include flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.donation-icon-items {
+.summary__icon--items {
   background-image: url(../assets/Icon-1.svg);
   height: 50px;
   width: 50px;
@@ -336,33 +338,52 @@
   background-repeat: no-repeat;
   margin-right: 20px;
 }
-.donation-icon-location {
+.summary__icon--location {
   background-image: url(../assets/Icon-4.svg);
   height: 50px;
   width: 50px;
   background-size: contain;
   margin-right: 20px;
 }
-.donation-confirmation-description {
-  display: flex;
+.summary__items-description,
+.summary__location-description {
+  @include flex;
   font-size: 24px;
   font-weight: normal;
   margin-bottom: 30px;
 }
-.donation-confirmation-columns {
+.summary__columns {
   display: flex;
+  width: 50%;
+  justify-content: space-between;
 }
-.donation-confirmation-column {
-  width: 300px;
+
+.summary__column--pickup-address,
+.summary__column--pickup-schedule {
+}
+
+.summary__column {
+  width: 400px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
 
-.pickup-schedule-column p {
-  font-size: 24px;
-  font-weight: 300;
+.summary__field {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
 }
-.donation-summary-btn {
+
+.summary__field-label {
+  width: 200px; /* Stała szerokość dla etykiety */
+  flex-shrink: 0; /* Zapobiega zmniejszaniu się szerokości etykiety */
+}
+
+.summary__field-value {
+  flex-grow: 1; /* Wartości zajmują pozostałą przestrzeń */
+}
+.thank-you__button {
   margin-top: 35px;
 }
