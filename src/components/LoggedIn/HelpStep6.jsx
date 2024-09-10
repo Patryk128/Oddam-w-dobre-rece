@@ -16,9 +16,9 @@ const Step6 = () => {
           Dziękujemy za przesłanie formularza. Na maila prześlemy wszelkie
           informacje o odbiorze.
         </p>
-        <div className="header-border"></div>
+        <div className="decorative-border"></div>
         <button
-          className="main__button thank-you__button"
+          className="hero__button thank-you__button"
           onClick={handleScrollHome}
         >
           STRONA GŁÓWNA

@@ -1,10 +1,9 @@
 .about-us {
   margin-top: 80px;
-  // width: 1900px;
   height: 935px;
   @include flex;
 }
-.about-text {
+.about-us__text {
   background-color: $primary-color;
   width: 50%;
   height: 100%;
@@ -13,19 +12,19 @@
   flex-direction: column;
   padding: 55px 150px;
 }
-.about-title {
+.about-us__title {
   font-size: 38px;
   color: $header-color;
   padding-bottom: 26px;
   margin-top: 190px;
 }
-.about-descrition {
+.about-us__description {
   font-size: 30px;
   color: $header-color;
   text-align: center;
   margin-top: 55px;
 }
-.about-signature {
+.about-us__signature {
   background-image: url(../assets/Signature.svg);
   background-repeat: no-repeat;
   width: 210px;
@@ -34,7 +33,7 @@
   margin-top: 50px;
 }
 
-.about-img {
+.about-us__image {
   background-image: url(../assets/People.jpg);
   width: 50%;
   height: 100%;

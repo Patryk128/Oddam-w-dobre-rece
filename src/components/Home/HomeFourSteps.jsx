@@ -26,42 +26,42 @@ const HomeFourSteps = () => {
 
   return (
     <>
-      <section className="four-steps">
-        <div className="four-steps-header">
-          <h2 className="four-steps-title">Wystarczą 4 proste kroki</h2>
-          <div className="header-border"></div>
+      <section className="steps">
+        <div className="steps__header">
+          <h2 className="steps__title">Wystarczą 4 proste kroki</h2>
+          <div className="decorative-border"></div>
         </div>
-        <div className="four-steps-content">
-          <div className="four-steps-single">
-            <div className="four-steps-img four-steps-img-first"></div>
-            <div className="four-steps-single-title">Wybierz rzeczy</div>
-            <div className="four-steps-descrition">
+        <div className="steps__content">
+          <div className="steps__single">
+            <div className="steps__img steps__img--first"></div>
+            <div className="steps__single-title">Wybierz rzeczy</div>
+            <div className="steps__description">
               ubrania, zabawki, sprzęt i inne
             </div>
           </div>
-          <div className="four-steps-single">
-            <div className="four-steps-img four-steps-img-second"></div>
-            <div className="four-steps-single-title">Spakuj je</div>
-            <div className="four-steps-descrition">
+          <div className="steps__single">
+            <div className="steps__img steps__img--second"></div>
+            <div className="steps__single-title">Spakuj je</div>
+            <div className="steps__description">
               skorzystaj z worków na śmieci
             </div>
           </div>
-          <div className="four-steps-single">
-            <div className="four-steps-img four-steps-img-third"></div>
-            <div className="four-steps-single-title">
+          <div className="steps__single">
+            <div className="steps__img steps__img--third"></div>
+            <div className="steps__single-title">
               Zdecyduj komu chcesz pomóc
             </div>
-            <div className="four-steps-descrition">wybierz zaufane miejsce</div>
+            <div className="steps__description">wybierz zaufane miejsce</div>
           </div>
-          <div className="four-steps-single">
-            <div className="four-steps-img four-steps-img-fourth"></div>
-            <div className="four-steps-single-title">Zamów kuriera</div>
-            <div className="four-steps-descrition">
+          <div className="steps__single">
+            <div className="steps__img steps__img--fourth"></div>
+            <div className="steps__single-title">Zamów kuriera</div>
+            <div className="steps__description">
               kurier przyjedzie w dogodnym terminie
             </div>
           </div>
         </div>
-        <button className="main__button" onClick={handleGiveAwayClick}>
+        <button className="hero__button" onClick={handleGiveAwayClick}>
           ODDAJ
           <br />
           RZECZY

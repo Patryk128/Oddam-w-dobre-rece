@@ -5,7 +5,7 @@
   padding: 0 150px;
 }
 
-.organizations-buttons {
+.organizations__buttons {
   margin: 20px 0;
 
   button {
@@ -16,61 +16,61 @@
   }
 }
 
-button.active {
+.organizations__button--active {
   border: 1px solid $header-color;
 }
 
-.organization-description {
+.organizations__description {
   margin: 80px 0 66px;
   padding: 0 450px;
   font-size: 22px;
   text-align: center;
 }
 
-.content {
+.organizations__description {
   text-align: left;
 }
 
-.entry {
+.organizations__entry {
   @include flex;
   justify-content: space-between;
   padding-bottom: 31px;
   border-bottom: 1px solid $header-color;
 }
-.entry:last-child {
+.organizations__entry:last-child {
   border-bottom: none;
 }
 
-.organization-name {
+.organizations__name {
   margin: 10px 0;
   font-size: 26px;
   color: $header-color;
 }
 
-.organization-mission {
+.organizations__mission {
   margin: 5px 0;
   font-size: 18px;
 }
-.oranization-needs hr {
+.organizations__needs hr {
   margin-top: 10px;
   border: 1px solid #eee;
 }
 
-.pagination {
+.organizations__pagination {
   margin: 20px 0;
 }
 
-.pagination button {
+.organizations__pagination-button {
   background-color: white;
   padding: 10px 20px;
   cursor: pointer;
   margin: 0 5px;
 }
 
-.pagination button.active {
+.organizations__pagination-button--active {
   border: 1px solid $header-color;
 }
-.organization-header {
+.organizations__header {
   @include flex;
   flex-direction: column;
   text-align: center;
@@ -79,7 +79,7 @@ button.active {
     margin-bottom: 25px;
   }
 }
-.organization-title {
+.organization__title {
   font-size: 38px;
   font-family: $font-base;
   color: $header-color;

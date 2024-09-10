@@ -1,5 +1,5 @@
 .auth-header-header,
-.logged-header-header {
+.header-logged {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,29 +8,8 @@
   flex-direction: column;
   padding-right: 142px;
 }
-.logged-header-nav {
-  margin-left: auto;
-  margin-top: 25px;
-  li {
-    font-size: 14px;
-    color: $user-color;
-    padding: 9px 20px;
-    border: 1px solid transparent;
-    transition: border-color 0.3s;
-    &:hover {
-      cursor: pointer;
-      border-color: $header-color;
-    }
-  }
-}
-.logged-header-nav h2 {
-  // font-size: 14px;
-  // color: #000;
-}
-.logged-header-nav-nav {
-  display: flex;
-}
-.header-button {
+
+.header-logged__button {
   font-size: 14px;
   color: $user-color;
   padding: 9px 20px;
@@ -40,5 +19,28 @@
     cursor: pointer;
     border-color: $warning-color;
     color: #000;
+  }
+}
+
+.header-logged__navigation {
+  margin-left: auto;
+  margin-top: 25px;
+  @include flex;
+  gap: 25px;
+}
+
+.header-logged__menu {
+  display: flex;
+}
+
+.header-logged__menu-item a {
+  font-size: 14px;
+  color: $user-color;
+  padding: 9px 20px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+  &:hover {
+    cursor: pointer;
+    border-color: $header-color;
   }
 }

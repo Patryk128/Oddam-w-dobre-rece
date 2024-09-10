@@ -51,7 +51,7 @@ const ToGiveBack = () => {
   };
 
   return (
-    <section className="donation-process">
+    <section className="donation-process-wrapper">
       <div>
         {step === 1 && (
           <Step1

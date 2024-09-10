@@ -160,55 +160,63 @@ const Organizations = () => {
 
   return (
     <div className="organizations">
-      <div className="organization-header">
-        <h1 className="organization-title">Komu pomagamy?</h1>
-        <div className="header-border"></div>
+      <div className="organizations__header">
+        <h1 className="organization__title">Komu pomagamy?</h1>
+        <div className="decorative-border"></div>
       </div>
-      <div className="organizations-buttons">
+      <div className="organizations__buttons">
         <button
-          className={category === "fundacje" ? "active" : ""}
+          className={`organizations__button ${
+            category === "fundacje" ? "organizations__button--active" : ""
+          }`}
           onClick={() => handleCategoryChange("fundacje")}
         >
           Fundacjom
         </button>
         <button
-          className={category === "organizacje" ? "active" : ""}
+          className={`organizations__button ${
+            category === "organizacje" ? "organizations__button--active" : ""
+          }`}
           onClick={() => handleCategoryChange("organizacje")}
         >
           Organizacjom pozarządowym
         </button>
         <button
-          className={category === "zbiorki" ? "active" : ""}
+          className={`organizations__button ${
+            category === "zbiorki" ? "organizations__button--active" : ""
+          }`}
           onClick={() => handleCategoryChange("zbiorki")}
         >
           Lokalnym zbiórkom
         </button>
       </div>
-      <div className="organization-description">
+      <div className="organizations__description">
         W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
         współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego
         potrzebują.
       </div>
-      <div className="content">
+      <div className="organizations__description">
         {getData().map((item) => (
-          <div className="entry" key={item.id}>
-            <div className="organization-main">
-              <h2 className="organization-name">{item.name}</h2>
-              <p className="organization-mission">
+          <div className="organizations__entry" key={item.id}>
+            <div className="organizations__main-info">
+              <h2 className="organizations__name">{item.name}</h2>
+              <p className="organizations__mission">
                 Cel i misja: {item.mission}
               </p>
             </div>
-            <p className="organization-needs"> {item.needs}</p>
+            <p className="organizations__needs"> {item.needs}</p>
           </div>
         ))}
       </div>
       {shouldPaginate && (
-        <div className="pagination">
+        <div className="organizations__pagination">
           {[...Array(totalPages())].map((_, i) => (
             <button
               key={i + 1}
               onClick={() => handlePageChange(i + 1)}
-              className={page === i + 1 ? "active" : ""}
+              className={`organizations__pagination-button ${
+                page === i + 1 ? "organizations__pagination-button--active" : ""
+              }`}
             >
               {i + 1}
             </button>

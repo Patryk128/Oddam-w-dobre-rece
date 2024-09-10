@@ -42,25 +42,28 @@ const Step2 = ({
 
       <div className="donation__form">
         <p className="donation__step-indicator">Krok 2/4</p>
-        <h2 className="donation-step-title">
+        <h2 className="donation__step-title">
           Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:
         </h2>
-        <div className="quantity-selection-container">
-          <div className="quantity-box">
-            <div className="quantity-selection">
-              <div className="select-box" onClick={handleQuantitySelectClick}>
-                <p className="selected-quantity">
+        <div className="quantity-selection">
+          <div className="quantity-selection__box">
+            <div className="quantity-selection__dropdown">
+              <div
+                className="quantity-selection__select-box"
+                onClick={handleQuantitySelectClick}
+              >
+                <p className="quantity-selection__selected">
                   {quantitySelectedOption || "--wybierz--"}
                 </p>
               </div>
             </div>
             {isOptionsVisible && (
-              <div className="options-dropdown">
-                <ul className="options-list">
+              <div className="quantity-selection__options-dropdown">
+                <ul className="quantity-selection__options-list">
                   {[1, 2, 3, 4, 5].map((option) => (
                     <li
                       key={option}
-                      className="options-list-item"
+                      className="quantity-selection__option-item"
                       onClick={() => handleQuantityOptionClick(option)}
                     >
                       {option}
@@ -70,7 +73,7 @@ const Step2 = ({
               </div>
             )}
           </div>
-          {error && <p className="error-message">{error}</p>}{" "}
+          {error && <p className="error__message">{error}</p>}{" "}
           <div className="summary__buttons">
             <button
               type="button"

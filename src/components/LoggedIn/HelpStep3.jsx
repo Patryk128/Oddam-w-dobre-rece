@@ -75,28 +75,28 @@ const Step3 = ({
       </div>
 
       <div className="donation__form">
-        <p className="donation-step-indicator">Krok 3/4</p>
-        <h2 className="donation-step-title">Lokalizacja</h2>
-        <div className="location-selection-container">
-          <div className="location-box">
-            <div className="location-selection">
+        <p className="donation__step-indicator">Krok 3/4</p>
+        <h2 className="donation__step-title">Lokalizacja</h2>
+        <div className="location-selection">
+          <div className="location-selection__box">
+            <div className="location-selection__dropdown">
               <div
-                className="select-box"
+                className="location-selection__select-box"
                 onClick={handleLocalizationSelectClick}
               >
-                <p className="selected-location">
+                <p className="location-selection__selected">
                   {localizationSelectedOption || "--wybierz--"}
                 </p>
               </div>
             </div>
             {isOptionsVisible && (
-              <div className="options-dropdown-large">
-                <ul className="options-list-large">
+              <div className="location-selection__options-dropdown">
+                <ul className="location-selection__options-list">
                   {["Poznań", "Warszawa", "Kraków", "Wrocław", "Katowice"].map(
                     (option) => (
                       <li
                         key={option}
-                        className="options-list-item"
+                        className="location-selection__option-item"
                         onClick={() => handleLocalizationOptionClick(option)}
                       >
                         {option}
@@ -107,11 +107,11 @@ const Step3 = ({
               </div>
             )}
             {localizationError && (
-              <p className="error-message">{localizationError}</p>
+              <p className="error__message">{localizationError}</p>
             )}
           </div>
 
-          <h3 className="aid-description-title">Komu chcesz pomóc?</h3>
+          <h3 className="aid-description__title">Komu chcesz pomóc?</h3>
           <div className="aid-options">
             {[
               "dzieciom",
@@ -129,10 +129,10 @@ const Step3 = ({
               </div>
             ))}
           </div>
-          {aidError && <p className="error-message">{aidError}</p>}
+          {aidError && <p className="error__message">{aidError}</p>}
 
-          <div className="aid-organization-textarea">
-            <h3 className="aid-description-title">
+          <div className="aid-organization__textarea">
+            <h3 className="aid-description__title">
               Wpisz nazwę konkretnej organizacji (opcjonalnie)
             </h3>
             <textarea
@@ -140,6 +140,7 @@ const Step3 = ({
               id="aid"
               value={organizationName}
               onChange={handleOrganizationNameChange}
+              maxLength={40}
             ></textarea>
           </div>
 

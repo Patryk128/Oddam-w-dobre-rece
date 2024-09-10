@@ -32,23 +32,23 @@ const HomeMain = () => {
   };
 
   return (
-    <div className="header container">
-      <div className="header-image"></div>
-      <div className="header-main">
-        <div className="header-content">
-          <h2 className="header-title">
+    <div className="hero container">
+      <div className="hero__image"></div>
+      <div className="hero__main">
+        <div className="hero__content">
+          <h2 className="hero__title">
             Zacznij pomagać!
             <br />
             Oddaj niechciane rzeczy w zaufane ręce
           </h2>
-          <div className="header-border"></div>
-          <div className="header-btns">
-            <button className="main__button" onClick={handleGiveAwayClick}>
+          <div className="decorative-border"></div>
+          <div className="hero__buttons">
+            <button className="hero__button" onClick={handleGiveAwayClick}>
               ODDAJ
               <br />
               RZECZY
             </button>
-            <button className="main__button" onClick={handleOrganizeClick}>
+            <button className="hero__button" onClick={handleOrganizeClick}>
               ZORGANIZUJ
               <br />
               ZBIÓRKĘ

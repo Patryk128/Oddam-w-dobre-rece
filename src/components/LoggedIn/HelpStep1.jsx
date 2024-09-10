@@ -43,7 +43,7 @@ const Step1 = ({ selectedItems, setSelectedItems, handleNextClick }) => {
       <div className="donation__form">
         <div className="donation-step-container">
           <p className="donation__step-indicator">Krok 1/4</p>
-          <h2 className="donation-step-title">Zaznacz co chcesz oddać:</h2>
+          <h2 className="donation__step-title">Zaznacz co chcesz oddać:</h2>
           <div className="donation-items-selection">
             {items.map((item, index) => (
               <label key={index} className="donation-item-label">
@@ -56,7 +56,7 @@ const Step1 = ({ selectedItems, setSelectedItems, handleNextClick }) => {
               </label>
             ))}
           </div>
-          {error && <p className="error-message">{error}</p>}{" "}
+          {error && <p className="error__message">{error}</p>}{" "}
           {/* Wyświetlanie błędu */}
           <div className="summary__buttons">
             <button

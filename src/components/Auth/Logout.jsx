@@ -17,7 +17,7 @@ const Logout = () => {
             <br />
             pomyślnie!
           </h2>
-          <div className="header-border"></div>
+          <div className="decorative-border"></div>
           <button className="btn-home">
             <Link to="/">Strona główna</Link>
           </button>

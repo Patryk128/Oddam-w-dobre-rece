@@ -75,7 +75,7 @@ const Register = () => {
       <section className="register">
         <div className="register-header">
           <h2 className="register-title">Załóż konto</h2>
-          <div className="header-border"></div>
+          <div className="decorative-border"></div>
         </div>
         <div className="register-panel">
           <form className="register-form" onSubmit={handleSubmit}>

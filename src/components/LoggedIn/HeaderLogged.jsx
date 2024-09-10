@@ -41,16 +41,18 @@ const HeaderLogged = () => {
     navigate("/logout");
   };
   const handleScrollHome = () => {
-    window.scrollTo(0, 0); // przewinięcie na górę strony
-    navigate("/home"); // przeniesienie na stronę główną
+    window.scrollTo(0, 0);
+    navigate("/home");
   };
 
   return (
-    <header className={`logged-header-header ${isSticky ? "sticky" : ""}`}>
-      <nav className="header-nav">
+    <header
+      className={`header-logged ${isSticky ? "header-logged--sticky" : ""}`}
+    >
+      <nav className="header-logged__navigation">
         <h2>Cześć, {user.email}</h2>
         <button
-          className="header-button"
+          className="header-logged__button"
           onClick={() => {
             if (user.isLoggedIn) {
               navigate("/main");
@@ -62,28 +64,28 @@ const HeaderLogged = () => {
         >
           Oddaj rzeczy
         </button>
-        <button className="header-button" onClick={handleLogout}>
+        <button className="header-logged__button" onClick={handleLogout}>
           Wyloguj
         </button>
       </nav>
-      <nav className="header-nav">
-        <ul className="header-nav-nav">
-          <li>
+      <nav className="header-logged__navigation">
+        <ul className="header-logged__menu">
+          <li className="header-logged__menu-item">
             <Link to="/home" onClick={handleScrollHome}>
               Strona główna
             </Link>
           </li>
-          <li>
+          <li className="header-logged__menu-item">
             <Scroll to="four-steps" smooth={true}>
               Start
             </Scroll>
           </li>
-          <li>
+          <li className="header-logged__menu-item">
             <Scroll to="to-give-back" smooth={true} offset={-130}>
               ZACZNIJ ODDAWAĆ
             </Scroll>
           </li>
-          <li>
+          <li className="header-logged__menu-item">
             <Scroll to="contact" smooth={true}>
               Kontakt
             </Scroll>

@@ -46,22 +46,24 @@ const HomeHeader = () => {
   };
 
   return (
-    <header className={`header-header ${isSticky ? "sticky" : ""}`}>
+    <header
+      className={`main-header ${isSticky ? "header-logged--sticky" : ""}`}
+    >
       {user.isLoggedIn ? (
-        <nav className="header-nav">
-          <div className="header-nav">
+        <nav className="main-header__user-nav">
+          <div className="main-header__user-actions">
             <h2>Cześć, {user.email}</h2>
-            <button className="header-button" onClick={handleScrollMain}>
+            <button className="main-header__button" onClick={handleScrollMain}>
               <Link to="/main">Oddaj rzeczy</Link>
             </button>
-            <button className="header-button" onClick={handleLogout}>
+            <button className="main-header__button" onClick={handleLogout}>
               Wyloguj
             </button>
           </div>
         </nav>
       ) : (
-        <nav className="user-log">
-          <ul className="header-nav-nav">
+        <nav className="main-header__guest-nav">
+          <ul className="main-header__auth-listheader-nav-nav">
             <li>
               <Link to="/login">Zaloguj</Link>
             </li>
@@ -71,8 +73,8 @@ const HomeHeader = () => {
           </ul>
         </nav>
       )}
-      <nav className="header-nav">
-        <ul className="header-nav-nav">
+      <nav className="main-header__navigation">
+        <ul className="main-header__nav-list">
           <li>
             <Scroll to="start" smooth={true} duration={500} offset={-150}>
               Start

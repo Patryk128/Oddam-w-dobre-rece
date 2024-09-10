@@ -1,4 +1,4 @@
-.donation-process {
+.donation-process-wrapper {
   display: flex;
   flex-direction: column;
   // height: 100vh; /* lub odpowiednia wysokość */
@@ -40,7 +40,7 @@
   font-size: 24px;
   color: $header-color;
 }
-.donation-step-title,
+.donation__step-title,
 .summary__title,
 .pickup-form__title {
   font-size: 36px;
@@ -80,8 +80,8 @@
   font-size: 16px;
   cursor: pointer;
 }
-.location-selection,
-.quantity-selection {
+.location-selection__dropdown,
+.quantity-selection__dropdown {
   @include flex;
 }
 
@@ -148,14 +148,16 @@
   width: 50px;
 }
 
-.location-box,
-.quantity-box {
+.quantity-selection__box,
+.location-selection__box {
   display: flex;
+  flex-direction: column;
   position: relative;
   width: 300px;
 }
 
-.select-box {
+.location-selection__selected,
+.quantity-selection__selected {
   display: flex;
   width: 300px;
   border: 1px solid $header-color;
@@ -170,7 +172,8 @@
   background-position: center right;
 }
 
-.options-dropdown {
+.location-selection__options-dropdown,
+.quantity-selection__options-dropdown {
   position: absolute;
   top: 100%;
   right: 0;
@@ -178,7 +181,8 @@
   background-color: #e8e9e4;
 }
 
-.options-list-item {
+.location-selection__option-item,
+.quantity-selection__option-item {
   list-style: none;
   font-size: 22px;
   color: $header-color;
@@ -188,31 +192,14 @@
   cursor: pointer;
 }
 
-.options-dropdown-large {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 15px;
-  background-color: #e8e9e4;
-}
-.options-list {
+.quantity-selection__options-list {
   width: 75px;
   border: 1px solid $header-color;
 }
 
-.options-list-large {
+.location-selection__options-list {
   width: 300px;
   border: 1px solid $header-color;
-}
-
-.options-list-item {
-  list-style: none;
-  font-size: 22px;
-  color: $header-color;
-  padding: 8px;
-  margin: 8px;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .help-box {
@@ -232,8 +219,8 @@
   background-repeat: no-repeat;
   background-position: center right;
 }
-.location-selection-container,
-.quantity-selection-container {
+.location-selection,
+.quantity-selection {
   height: 100%;
   flex-direction: column;
   display: flex;
@@ -260,9 +247,9 @@
 .aid-option.active {
   background-color: #fad648;
 }
-.aid-organization-textarea {
+.aid-organization__textarea {
 }
-.aid-organization-textarea textarea {
+.aid-organization__textarea textarea {
   width: 570px;
   height: 40px;
   border: 1px solid $header-color;
@@ -271,16 +258,11 @@
 }
 
 .pickup-form {
-  display: flex;
-  flex-direction: column;
-  width: 900px;
 }
 .pickup-form__columns {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // flex-direction: column;
-  width: 100%;
 }
 .form__group {
   width: 400px;
@@ -317,7 +299,7 @@
 .summary__column-head,
 .summary__column-heading,
 .pickup-form__section-title,
-.aid-description-title {
+.aid-description__title {
   padding-top: 50px;
   padding-bottom: 30px;
   font-size: 24px;
@@ -358,8 +340,8 @@
   justify-content: space-between;
 }
 
-.summary__column--pickup-address,
-.summary__column--pickup-schedule {
+.summary__column--pickup-address {
+  margin-right: 20px;
 }
 
 .summary__column {
@@ -382,7 +364,8 @@
 }
 
 .summary__field-value {
-  flex-grow: 1; /* Wartości zajmują pozostałą przestrzeń */
+  flex-grow: 1;
+  word-break: break-all;
 }
 .thank-you__button {
   margin-top: 35px;

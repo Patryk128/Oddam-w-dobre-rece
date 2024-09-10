@@ -1,4 +1,4 @@
-.logged-four-steps {
+.four-steps-logged {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -8,7 +8,7 @@
   padding-right: 142px;
 }
 
-.logged-four-steps-img {
+.four-steps-logged__image {
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 70%, #ffffff),
     url(../assets/Form-Hero-Image.jpg) left center no-repeat;
   background-position: left center;
@@ -18,25 +18,25 @@
   height: 100%;
 }
 
-.logged-four-steps-content {
+.four-steps-logged__content {
   width: 50%;
   height: 100%;
   @include column;
   padding-left: 50px;
 }
-.logged-four-steps-form {
+.four-steps-logged__form {
   padding-top: 134px;
   @include column;
 }
 
-.logged-four-steps-title {
+.four-steps-logged__title {
   font-size: 38px;
   color: #333;
   text-align: center;
   margin-bottom: 20px;
 }
 
-.logged-four-steps-description {
+.four-steps-logged__description {
   font-size: 40px;
   font-weight: 300;
   margin-bottom: 70px;
@@ -44,13 +44,13 @@
   text-align: left;
 }
 
-.logged-four-steps-steps {
+.four-steps-logged__steps {
   display: flex;
   justify-content: center;
   gap: 15px;
 }
 
-.logged-four-steps-step {
+.four-steps-logged__step {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,11 +64,11 @@
   text-align: center;
 }
 
-.logged-four-steps-step span {
+.four-steps-logged__step span {
   rotate: -45deg;
 }
 
-.logged-four-steps-step p {
+.four-steps-logged__step p {
   margin-top: 10px;
 }
 

@@ -5,12 +5,12 @@ button:hover {
   width: 1900px;
   padding-right: 142px;
 }
-.header {
+.hero {
   margin-top: 37px;
   height: 960px;
   display: flex;
 }
-.header-header {
+.main-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -18,15 +18,9 @@ button:hover {
   display: flex;
   flex-direction: column;
   padding-right: 142px;
-  // margin-top: 45px;
-  // transition: 0.4s;
 }
-// .header-header.scrolled {
-//   width: 100%;
-//   background-color: #f0f0f0;
-// }
 
-.sticky {
+.header-logged--sticky {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(3.5px);
@@ -35,7 +29,7 @@ button:hover {
   border: 1px solid rgba(255, 255, 255, 0.18);
   z-index: 100;
 }
-.user-log {
+.main-header__guest-nav {
   margin-left: auto;
   margin-top: 25px;
   li {
@@ -50,7 +44,9 @@ button:hover {
     }
   }
 }
-.header-nav {
+.main-header__user-nav,
+.main-header__user-actions,
+.main-header__navigation {
   margin-left: auto;
   margin-top: 25px;
   @include flex;
@@ -67,45 +63,46 @@ button:hover {
     }
   }
 }
-.header-nav-nav {
+.main-header__guest-nav,
+.main-header__nav-list {
   display: flex;
 }
-.header-image {
+.hero__image {
   background-image: url(../assets/Home-Hero-Image.jpg);
   background-size: cover;
   background-position: right;
   width: 40%;
 }
-.header-main {
+.hero__main {
   @include flex;
   width: 60%;
 }
-.header-content {
+.hero__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.header-title {
+.hero__title {
   font-size: 38px;
   color: $header-color;
   text-align: center;
   padding-bottom: 25px;
 }
-.header-border {
+.decorative-border {
   background-image: url(../assets/Decoration.png);
   background-size: cover;
   background-position: center;
   width: 250px;
   height: 33px;
 }
-.header-btns {
+.hero__buttons {
   padding-top: 78px;
   display: flex;
   gap: 40px;
   color: $header-color;
 }
-.main__button {
+.hero__button {
   text-align: center;
   padding: 13px 93px;
   border: 1px solid $header-color;
@@ -113,31 +110,31 @@ button:hover {
   font-size: 36px;
 }
 
-.three-col {
+.three-columns {
   background-image: url(../assets/3_Columns_Background.png);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 163px;
 }
-.three-col-content {
+.three-columns__content {
   padding: 45px 70px 86px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.three-col-number {
+.three-columns__number {
   font-size: 90px;
   font-weight: 300;
   color: $number-color;
 }
-.three-col-title {
+.three-columns__title {
   font-size: 18px;
   color: $header-color;
   margin-bottom: 26px;
 }
-.three-col-text {
+.three-columns__text {
   font-size: 16px;
   color: $header-color;
   font-family: $font-alt;

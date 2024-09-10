@@ -59,7 +59,7 @@ const Login = () => {
       <section className="login">
         <div className="login-header">
           <h2 className="login-title">Zaloguj się</h2>
-          <div className="header-border"></div>
+          <div className="decorative-border"></div>
         </div>
         <div className="login-panel">
           <form className="login-form" onSubmit={handleSubmit}>

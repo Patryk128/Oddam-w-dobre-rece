@@ -84,21 +84,28 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="contact-content">
-      <div className="contact-img"></div>
-      <div className="contact-form">
-        <h2 className="contact-title">Skontaktuj się z nami</h2>
-        <div className="header-border"></div>
+    <section className="contact">
+      <div className="contact__img"></div>
+      <div className="contact__form">
+        <h2 className="contact__title">Skontaktuj się z nami</h2>
+        <div className="contact__header-border"></div>
         {submissionStatus === "success" && (
-          <p className="success__message">
+          <p className="contact__success-message">
             Wiadomość została wysłana!
             <br /> Wkrótce się skontaktujemy.
           </p>
         )}
         <form onSubmit={handleSubmit}>
-          <div className="contact-name">
-            <div className="contact-input">
-              <label htmlFor="name">Wpisz swoje imię</label>
+          <div className="contact__name">
+            <div className="contact__input">
+              <label
+                htmlFor="name"
+                className={
+                  errors.name ? "contact__label--error" : "contact__label"
+                }
+              >
+                Wpisz swoje imię
+              </label>
               <input
                 type="text"
                 id="name"
@@ -106,12 +113,21 @@ const ContactForm = () => {
                 placeholder="Wpisz swoje imię"
                 value={formData.name}
                 onChange={handleChange}
-                className={errors.name ? "error" : ""}
+                className={errors.name ? "contact__input--error" : ""}
               />
-              {errors.name && <p className="error__message">{errors.name}</p>}
+              {errors.name && (
+                <p className="contact__error-message">{errors.name}</p>
+              )}
             </div>
-            <div className="contact-input">
-              <label htmlFor="email">Wpisz swój email</label>
+            <div className="contact__input">
+              <label
+                htmlFor="email"
+                className={
+                  errors.email ? "contact__label--error" : "contact__label"
+                }
+              >
+                Wpisz swój email
+              </label>
               <input
                 type="email"
                 id="email"
@@ -119,13 +135,22 @@ const ContactForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Wpisz swój email"
-                className={errors.email ? "error" : ""}
+                className={errors.email ? "contact__input--error" : ""}
               />
-              {errors.email && <p className="error__message">{errors.email}</p>}
+              {errors.email && (
+                <p className="contact__error-message">{errors.email}</p>
+              )}
             </div>
           </div>
-          <div className="contact-input contact-input-textarea">
-            <label htmlFor="message">Wpisz swoją wiadomość</label>
+          <div className="contact__input contact__input--textarea">
+            <label
+              htmlFor="message"
+              className={
+                errors.message ? "contact__label--error" : "contact__label"
+              }
+            >
+              Wpisz swoją wiadomość
+            </label>
             <textarea
               id="message"
               name="message"
@@ -134,14 +159,14 @@ const ContactForm = () => {
               onChange={handleChange}
               maxLength={200}
               placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae praesentium quibusdam deleniti voluptate quo quam quae, distinctio quisquam accusamus consectetur dolore consequuntur."
-              className={errors.message ? "error" : ""}
+              className={errors.message ? "contact__input--error" : ""}
             />
             {errors.message && (
-              <p className="error__message">{errors.message}</p>
+              <p className="contact__error-message">{errors.message}</p>
             )}
           </div>
-          <div className="button-container">
-            <button className="contact-button" type="submit">
+          <div className="contact__button-container">
+            <button className="contact__button" type="submit">
               Wyślij
             </button>
           </div>
@@ -149,11 +174,11 @@ const ContactForm = () => {
       </div>
 
       <footer className="footer">
-        <div className="footer-content">
-          <h2 className="footer-title">Copyright by Coders Lab</h2>
-          <div className="footer-socials">
-            <div className="footer-social footer-social-fb"></div>
-            <div className="footer-social footer-social-ig"></div>
+        <div className="footer__content">
+          <h2 className="footer__title">Copyright by Coders Lab</h2>
+          <div className="footer__socials">
+            <div className="footer__social footer__social--fb"></div>
+            <div className="footer__social footer__social--ig"></div>
           </div>
         </div>
       </footer>
