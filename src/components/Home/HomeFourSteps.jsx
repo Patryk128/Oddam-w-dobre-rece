@@ -14,14 +14,12 @@ const HomeFourSteps = () => {
       setUser(userData);
     }
   }, []);
-
   const handleGiveAwayClick = () => {
     if (user.isLoggedIn) {
-      navigate("/main");
+      navigate("/main#to-give-back");
     } else {
       navigate("/login");
     }
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
