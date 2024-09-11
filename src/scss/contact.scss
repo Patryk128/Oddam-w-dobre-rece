@@ -63,22 +63,7 @@
   display: block;
   margin-bottom: 12px;
   font-weight: 600;
-  color: gray; 
-}
-
-.contact__label--error {
-  color: red; 
-}
-
-.contact__input--error {
-  border-bottom: 1px solid red;
-}
-
-.contact__error-message {
-  color: red;
-  font-size: 12px;
-  margin-top: 2px;
-  margin-bottom: 10px;
+  color: gray;
 }
 
 .contact__input input,
@@ -87,18 +72,6 @@
   padding: 8px;
   margin-bottom: 5px;
   width: 100%;
-}
-
-.contact__input--error {
-  border-bottom: 1px solid red;
-}
-
-.contact__error-message,
-.error__message {
-  color: red;
-  font-size: 12px;
-  margin-top: 2px;
-  margin-bottom: 10px;
 }
 
 .contact__success-message,

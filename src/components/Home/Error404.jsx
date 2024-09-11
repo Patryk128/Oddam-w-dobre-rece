@@ -1,12 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Error404 = () => {
+  const navigate = useNavigate();
+
+  const handleScrollHome = () => {
+    window.scrollTo(0, 0);
+    navigate("/home");
+  };
   return (
     <>
-      <h2>Nie znaleziono strony</h2>
-      <button>
-        <Link to="/">Strona główna</Link>
-      </button>
+      <div className="error-404">
+        <h2 className="error-404__title">Nie znaleziono strony</h2>
+        <button
+          className="hero__button thank-you__button"
+          onClick={handleScrollHome}
+        >
+          STRONA GŁÓWNA
+        </button>
+      </div>
     </>
   );
 };

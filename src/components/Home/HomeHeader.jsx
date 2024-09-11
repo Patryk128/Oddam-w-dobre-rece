@@ -63,7 +63,7 @@ const HomeHeader = () => {
         </nav>
       ) : (
         <nav className="main-header__guest-nav">
-          <ul className="main-header__auth-listheader-nav-nav">
+          <ul className="main-header__auth-list">
             <li>
               <Link to="/login">Zaloguj</Link>
             </li>

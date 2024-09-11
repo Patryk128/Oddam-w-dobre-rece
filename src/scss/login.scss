@@ -5,10 +5,10 @@
   height: 90vh;
 }
 
-.login-header {
+.login__header {
   text-align: center;
 }
-.login-panel {
+.login__panel {
   margin-top: 60px;
   width: 504px;
   display: flex;
@@ -17,11 +17,11 @@
   flex-direction: column;
 }
 
-.login-title {
+.login__title {
   font-size: 40px;
   margin-bottom: 25px;
 }
-.login-form {
+.login__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,55 +32,40 @@
   // height: 235px;
 }
 
-.login-input {
+.login__input {
   margin-bottom: 15px;
   padding-top: 40px;
   width: 250px;
 }
-.login-input:last-of-type {
+.login__input:last-of-type {
   padding-bottom: 40px;
 }
 
-.login-input label {
+.login__label {
   display: block;
   color: $header-color;
   font-weight: 600;
 }
 
-.login-input input {
+.login__input input {
   width: 200px;
   border-bottom: 1px solid $header-color;
+  padding-top: 10px;
 }
 
-.login-nav {
+.login__nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding-top: 53px;
 }
 
-.login-button {
+.login__button {
   font-size: 18px;
   padding: 13px 16px;
   cursor: pointer;
-}
 
-.login-button-register {
-  background-color: white;
-  color: black;
-  border: none;
-}
-
-.login-button-login {
-  border: 1px solid $header-color;
-}
-.error {
-  color: red;
-  margin-top: 5px;
-  font-size: 10px;
-  font-weight: bold;
-}
-
-.login-input .input-error {
-  border-bottom: 1px solid red;
+  &:hover {
+    border: 0.75px solid $header-color;
+  }
 }

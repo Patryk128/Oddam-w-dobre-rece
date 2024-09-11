@@ -28,6 +28,10 @@ button:hover {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   z-index: 100;
+
+  .header-logged__menu {
+    margin-bottom: 15px;
+  }
 }
 .main-header__guest-nav {
   margin-left: auto;
@@ -46,7 +50,8 @@ button:hover {
 }
 .main-header__user-nav,
 .main-header__user-actions,
-.main-header__navigation {
+.main-header__navigation,
+.main-header__auth-list {
   margin-left: auto;
   margin-top: 25px;
   @include flex;
@@ -62,6 +67,9 @@ button:hover {
       border-color: $header-color;
     }
   }
+}
+.main-header__auth-list {
+  margin-top: 0;
 }
 .main-header__guest-nav,
 .main-header__nav-list {

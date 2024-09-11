@@ -1,11 +1,25 @@
-import React from "react";
-import { Element } from "react-scroll";
+import React, { useEffect } from "react";
+import { Element, scroller } from "react-scroll";
 import HomeFourStepsLogged from "./HomeFourStepsLogged";
 import Contact from "../Home/Contact";
 import ToGiveBack from "./ToGiveBack";
 import HeaderLogged from "./HeaderLogged";
+import { useLocation } from "react-router-dom";
 
 const HomeLoggedIn = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Sprawdzenie, czy URL zawiera hash #to-give-back
+    if (location.hash === "#to-give-back") {
+      scroller.scrollTo("to-give-back", {
+        duration: 800,
+        delay: 0,
+        smooth: "easeInOutQuart",
+      });
+    }
+  }, [location]);
+
   return (
     <div>
       <Element>

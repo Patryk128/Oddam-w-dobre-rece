@@ -11,14 +11,14 @@ const Logout = () => {
     <>
       <AuthHeader />
       <div className="logout">
-        <div className="logout-container">
-          <h2 className="logout-title">
+        <div className="logout__container">
+          <h2 className="logout__title">
             Wylogowanie nastąpiło
             <br />
             pomyślnie!
           </h2>
           <div className="decorative-border"></div>
-          <button className="btn-home">
+          <button className="logout__button-home">
             <Link to="/">Strona główna</Link>
           </button>
         </div>

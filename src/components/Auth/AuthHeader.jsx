@@ -59,10 +59,10 @@ const AuthHeader = () => {
     if (location.pathname === "/login") {
       return (
         <>
-          <button className="header-button" onClick={handleHome}>
+          <button className="header-logged__button" onClick={handleHome}>
             Strona główna
           </button>
-          <button className="header-button" onClick={handleRegister}>
+          <button className="header-logged__button" onClick={handleRegister}>
             Zarejestruj
           </button>
         </>
@@ -70,10 +70,10 @@ const AuthHeader = () => {
     } else if (location.pathname === "/register") {
       return (
         <>
-          <button className="header-button" onClick={handleHome}>
+          <button className="header-logged__button" onClick={handleHome}>
             Strona główna
           </button>
-          <button className="header-button" onClick={handleLogin}>
+          <button className="header-logged__button" onClick={handleLogin}>
             Zaloguj
           </button>
         </>
@@ -81,13 +81,13 @@ const AuthHeader = () => {
     } else if (location.pathname === "/logout") {
       return (
         <>
-          <button className="header-button" onClick={handleHome}>
+          <button className="header-logged__button" onClick={handleHome}>
             Strona główna
           </button>
-          <button className="header-button" onClick={handleLogin}>
+          <button className="header-logged__button" onClick={handleLogin}>
             Zaloguj
           </button>
-          <button className="header-button" onClick={handleRegister}>
+          <button className="header-logged__button" onClick={handleRegister}>
             Zarejestruj
           </button>
         </>
@@ -96,8 +96,8 @@ const AuthHeader = () => {
   };
 
   return (
-    <header className={`auth-header-header ${isSticky ? "sticky" : ""}`}>
-      <nav className="header-nav">{renderButtons()}</nav>
+    <header className={`auth-header__header ${isSticky ? "sticky" : ""}`}>
+      <nav className="header-logged__navigation">{renderButtons()}</nav>
     </header>
   );
 };

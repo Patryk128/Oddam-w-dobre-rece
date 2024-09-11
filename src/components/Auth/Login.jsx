@@ -57,49 +57,55 @@ const Login = () => {
     <>
       <AuthHeader />
       <section className="login">
-        <div className="login-header">
-          <h2 className="login-title">Zaloguj się</h2>
+        <div className="login__header">
+          <h2 className="login__title">Zaloguj się</h2>
           <div className="decorative-border"></div>
         </div>
-        <div className="login-panel">
-          <form className="login-form" onSubmit={handleSubmit}>
-            <div className="login-input">
-              <label htmlFor="email">Email</label>
+        <div className="login__panel">
+          <form className="login__form" onSubmit={handleSubmit}>
+            <div className="login__input">
+              <label htmlFor="email" className="login__label">
+                Email
+              </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={validationErrors.email ? "input-error" : ""}
+                className={validationErrors.email ? "login__input--error" : ""}
               />
               {validationErrors.email && (
-                <div className="error">{validationErrors.email}</div>
+                <div className="login__error">{validationErrors.email}</div>
               )}
             </div>
-            <div className="login-input">
-              <label htmlFor="password">Hasło</label>
+            <div className="login__input">
+              <label htmlFor="password" className="login__label">
+                Hasło
+              </label>
               <input
                 type="password"
                 id="password"
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className={validationErrors.password ? "input-error" : ""}
+                className={
+                  validationErrors.password ? "login__input--error" : ""
+                }
               />
               {validationErrors.password && (
-                <div className="error">{validationErrors.password}</div>
+                <div className="login__error">{validationErrors.password}</div>
               )}
             </div>
-            {generalError && <div className="error">{generalError}</div>}
+            {generalError && <div className="login__error">{generalError}</div>}
           </form>
-          <div className="login-nav">
-            <button className="login-button login-button-register">
+          <div className="login__nav">
+            <button className="login__button login__button--register">
               <Link to="/register">Załóż konto</Link>
             </button>
             <button
               type="button"
-              className="login-button login-button-login"
+              className="login__button login__button--login"
               onClick={handleSubmit}
             >
               Zaloguj się

@@ -73,26 +73,32 @@ const Register = () => {
     <>
       <AuthHeader />
       <section className="register">
-        <div className="register-header">
-          <h2 className="register-title">Załóż konto</h2>
+        <div className="register__header">
+          <h2 className="register__title">Załóż konto</h2>
           <div className="decorative-border"></div>
         </div>
-        <div className="register-panel">
-          <form className="register-form" onSubmit={handleSubmit}>
-            <div className="register-input">
-              <label htmlFor="email">Email</label>
+        <div className="register__panel">
+          <form className="register__form" onSubmit={handleSubmit}>
+            <div className="register__input">
+              <label htmlFor="email" className="register__label">
+                Email
+              </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={errors.email ? "input-error" : ""}
+                className={errors.email ? "register__input--error" : ""}
               />
-              {errors.email && <div className="error">{errors.email}</div>}
+              {errors.email && (
+                <div className="register__error">{errors.email}</div>
+              )}
             </div>
-            <div className="register-input">
-              <label htmlFor="password">Hasło</label>
+            <div className="register__input">
+              <label htmlFor="password" className="register__label">
+                Hasło
+              </label>
               <input
                 type="password"
                 id="password"
@@ -100,15 +106,19 @@ const Register = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className={
-                  errors.password || errors.confirmPassword ? "input-error" : ""
+                  errors.password || errors.confirmPassword
+                    ? "register__input--error"
+                    : ""
                 }
               />
               {errors.password && (
-                <div className="error">{errors.password}</div>
+                <div className="register__error">{errors.password}</div>
               )}
             </div>
-            <div className="register-input">
-              <label htmlFor="confirmPassword">Powtórz hasło</label>
+            <div className="register__input">
+              <label htmlFor="confirmPassword" className="register__label">
+                Powtórz hasło
+              </label>
               <input
                 type="password"
                 id="confirmPassword"
@@ -116,21 +126,23 @@ const Register = () => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 className={
-                  errors.password || errors.confirmPassword ? "input-error" : ""
+                  errors.password || errors.confirmPassword
+                    ? "register__input--error"
+                    : ""
                 }
               />
               {errors.password && (
-                <div className="error">{errors.password}</div>
+                <div className="register__error">{errors.password}</div>
               )}
             </div>
           </form>
-          <div className="register-nav">
-            <button className="register-button register-button-login">
+          <div className="register__nav">
+            <button className="register__button register__button--login">
               <Link to="/login">Zaloguj się</Link>
             </button>
             <button
               type="submit"
-              className="register-button register-button-register"
+              className="register__button register__button--register"
               onClick={handleSubmit}
             >
               Załóż konto

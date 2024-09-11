@@ -6,6 +6,7 @@ import Register from "./components/Auth/Register.jsx";
 import Logout from "./components/Auth/Logout.jsx";
 import HomeLoggedIn from "./components/LoggedIn/HomeLoggedIn.jsx";
 import Error404 from "./components/Home/Error404.jsx";
+import ToGiveBack from "./components/LoggedIn/ToGiveBack.jsx";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/main" element={<HomeLoggedIn />} />
+        <Route path="/to-give-back" element={<ToGiveBack />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </Router>

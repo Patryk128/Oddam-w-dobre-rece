@@ -1,0 +1,46 @@
+.contact__label--error {
+  color: red;
+}
+.contact__input--error {
+  border-bottom: 1px solid red;
+}
+.contact__error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+.contact__input--error {
+  border-bottom: 1px solid red;
+}
+
+.contact__error-message,
+.error__message {
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+.error,
+.login__error,
+.register__error {
+  color: red;
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.input-error,
+.login__input--error,
+.register__input--error {
+  border-bottom: 1px solid red;
+}
+.error-404 {
+  @include column;
+  height: 100vh;
+  text-align: center;
+}
+
+.error-404__title {
+  font-size: 60px;
+}

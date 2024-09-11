@@ -17,7 +17,7 @@ const HomeMain = () => {
 
   const handleGiveAwayClick = () => {
     if (user.isLoggedIn) {
-      navigate("/main");
+      navigate("/main#to-give-back");
     } else {
       navigate("/login");
     }
