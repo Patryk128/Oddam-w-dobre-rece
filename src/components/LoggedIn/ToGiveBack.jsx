@@ -8,18 +8,17 @@ import Step6 from "./HelpStep6";
 
 const ToGiveBack = () => {
   const [step, setStep] = useState(1);
-  const [selectedValue, setSelectedValue] = useState(""); // Lepsze jest użycie pustego stringa
+  const [selectedValue, setSelectedValue] = useState("");
   const [isOptionsVisible, setIsOptionsVisible] = useState(false);
-  const [quantitySelectedOption, setQuantitySelectedOption] = useState(""); // Lepsze jest użycie pustego stringa
+  const [quantitySelectedOption, setQuantitySelectedOption] = useState("");
   const [localizationSelectedOption, setLocalizationSelectedOption] =
-    useState(""); // Lepsze jest użycie pustego stringa
+    useState("");
   const [clicked, setClicked] = useState({});
   const [formData, setFormData] = useState({});
   const [selectedItems, setSelectedItems] = useState([]);
   const [organizationName, setOrganizationName] = useState("");
 
   const handleNextClick = () => {
-    // Jeśli jesteśmy w kroku 4, zweryfikujmy dane
     if (step === 4) {
       const isValid = validateFormData();
       if (!isValid) return;

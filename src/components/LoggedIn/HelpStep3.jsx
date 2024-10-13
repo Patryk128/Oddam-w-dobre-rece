@@ -10,7 +10,7 @@ const Step3 = ({
   handleNextClick,
   handleBackClick,
   organizationName,
-  setOrganizationName, // Nowy prop do ustawiania nazwy organizacji
+  setOrganizationName,
 }) => {
   const [localizationError, setLocalizationError] = useState("");
   const [aidError, setAidError] = useState("");
@@ -21,7 +21,7 @@ const Step3 = ({
   const handleLocalizationOptionClick = (option) => {
     setLocalizationSelectedOption(option);
     setIsOptionsVisible(false);
-    setLocalizationError(""); // Czyszczenie błędu po wybraniu opcji lokalizacji
+    setLocalizationError("");
   };
 
   const handleClick = (option) => {
@@ -29,7 +29,7 @@ const Step3 = ({
       ...prevClicked,
       [option]: !prevClicked[option],
     }));
-    setAidError(""); // Czyszczenie błędu po kliknięciu opcji pomocy
+    setAidError("");
   };
 
   const handleNextClickInternal = () => {
@@ -44,23 +44,23 @@ const Step3 = ({
       setLocalizationError("Proszę wybrać lokalizację przed przejściem dalej.");
       hasError = true;
     } else {
-      setLocalizationError(""); // Czyszczenie błędu lokalizacji
+      setLocalizationError("");
     }
 
     if (!hasSelectedAidOption) {
       setAidError("Proszę wybrać co najmniej jedną opcję, komu chcesz pomóc.");
       hasError = true;
     } else {
-      setAidError(""); // Czyszczenie błędu pomocy
+      setAidError("");
     }
 
     if (!hasError) {
-      handleNextClick(); // Wywołanie oryginalnego handleNextClick
+      handleNextClick();
     }
   };
 
   const handleOrganizationNameChange = (e) => {
-    setOrganizationName(e.target.value); // Ustawienie nazwy organizacji w stanie nadrzędnym
+    setOrganizationName(e.target.value);
   };
 
   return (

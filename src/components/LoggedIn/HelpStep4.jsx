@@ -23,35 +23,29 @@ const Step4 = ({ handleFormDataChange, handleNextClick, handleBackClick }) => {
     const newErrors = {};
     const postalCodeRegex = /^\d{2}-\d{3}$/;
     const phoneNumberRegex = /^\d{9}$/;
-    const dateRegex = /^\d{2}-\d{2}-\d{4}$/; // Formatuj: DD-MM-YYYY
-    const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/; // Formatuj: HH:MM
+    const dateRegex = /^\d{2}-\d{2}-\d{4}$/;
+    const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/;
 
-    // Walidacja pola "Ulica"
     if (formData.street.trim().length < 3) {
       newErrors.street = "Ulica musi mieć co najmniej 3 znaki.";
     }
 
-    // Walidacja pola "Miasto"
     if (formData.city.trim().length < 3) {
       newErrors.city = "Miasto musi mieć co najmniej 3 znaki.";
     }
 
-    // Walidacja kodu pocztowego
     if (!formData.postalCode.match(postalCodeRegex)) {
       newErrors.postalCode = "Kod pocztowy musi mieć format XX-XXX.";
     }
 
-    // Walidacja numeru telefonu
     if (!formData.phoneNumber.match(phoneNumberRegex)) {
       newErrors.phoneNumber = "Numer telefonu musi mieć 9 cyfr.";
     }
 
-    // Walidacja daty
     if (!formData.date.match(dateRegex)) {
       newErrors.date = "Data musi mieć format DD-MM-YYYY.";
     }
 
-    // Walidacja godziny
     if (!formData.time.match(timeRegex)) {
       newErrors.time = "Godzina musi mieć format HH:MM.";
     }

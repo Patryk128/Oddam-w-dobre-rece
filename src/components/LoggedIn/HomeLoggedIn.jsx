@@ -10,7 +10,6 @@ const HomeLoggedIn = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Sprawdzenie, czy URL zawiera hash #to-give-back
     if (location.hash === "#to-give-back") {
       scroller.scrollTo("to-give-back", {
         duration: 800,

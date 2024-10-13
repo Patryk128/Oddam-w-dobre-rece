@@ -19,15 +19,15 @@ const Step1 = ({ selectedItems, setSelectedItems, handleNextClick }) => {
         return [...prevSelectedItems, item];
       }
     });
-    setError(""); // Czyszczenie błędu po zaznaczeniu opcji
+    setError("");
   };
 
   const handleNextClickInternal = () => {
     if (selectedItems.length === 0) {
       setError("Proszę wybrać co najmniej jedną rzecz przed przejściem dalej.");
     } else {
-      setError(""); // Czyszczenie błędu przed przejściem dalej
-      handleNextClick(); // Wywołanie oryginalnego handleNextClick
+      setError("");
+      handleNextClick();
     }
   };
 
@@ -57,7 +57,6 @@ const Step1 = ({ selectedItems, setSelectedItems, handleNextClick }) => {
             ))}
           </div>
           {error && <p className="error__message">{error}</p>}{" "}
-          {/* Wyświetlanie błędu */}
           <div className="summary__buttons">
             <button
               type="button"

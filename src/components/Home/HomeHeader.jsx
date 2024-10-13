@@ -9,6 +9,7 @@ const HomeHeader = () => {
     email: "",
   });
   const [isSticky, setIsSticky] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user")) || {};
@@ -40,73 +41,93 @@ const HomeHeader = () => {
     });
     navigate("/logout");
   };
+
   const handleScrollMain = () => {
-    window.scrollTo(0, 0); // przewinięcie na górę strony
-    navigate("/main"); // przeniesienie na stronę główną
+    window.scrollTo(0, 0);
+    navigate("/main");
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
     <header
       className={`main-header ${isSticky ? "header-logged--sticky" : ""}`}
     >
-      {user.isLoggedIn ? (
-        <nav className="main-header__user-nav">
-          <div className="main-header__user-actions">
-            <h2>Cześć, {user.email}</h2>
-            <button className="main-header__button" onClick={handleScrollMain}>
-              <Link to="/main">Oddaj rzeczy</Link>
-            </button>
-            <button className="main-header__button" onClick={handleLogout}>
-              Wyloguj
-            </button>
-          </div>
-        </nav>
-      ) : (
-        <nav className="main-header__guest-nav">
-          <ul className="main-header__auth-list">
+      <div className="main-header__content">
+        <button
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+        >
+          <span className="hamburger__line"></span>
+          <span className="hamburger__line"></span>
+          <span className="hamburger__line"></span>
+        </button>
+
+        {user.isLoggedIn ? (
+          <nav className={`main-header__user-nav ${menuOpen ? "open" : ""}`}>
+            <div className="main-header__user-actions">
+              <h2>Cześć, {user.email}</h2>
+              <button
+                className="main-header__button"
+                onClick={handleScrollMain}
+              >
+                <Link to="/main">Oddaj rzeczy</Link>
+              </button>
+              <button className="main-header__button" onClick={handleLogout}>
+                Wyloguj
+              </button>
+            </div>
+          </nav>
+        ) : (
+          <nav className={`main-header__guest-nav ${menuOpen ? "open" : ""}`}>
+            <ul className="main-header__auth-list">
+              <li>
+                <Link to="/login">Zaloguj</Link>
+              </li>
+              <li>
+                <Link to="/register">Załóż konto</Link>
+              </li>
+            </ul>
+          </nav>
+        )}
+
+        <nav className={`main-header__navigation ${menuOpen ? "open" : ""}`}>
+          <ul className="main-header__nav-list">
             <li>
-              <Link to="/login">Zaloguj</Link>
+              <Scroll to="start" smooth={true} duration={500} offset={-150}>
+                Start
+              </Scroll>
             </li>
             <li>
-              <Link to="/register">Załóż konto</Link>
+              <Scroll to="about" smooth={true} duration={500} offset={-150}>
+                O co chodzi?
+              </Scroll>
+            </li>
+            <li>
+              <Scroll to="about-us" smooth={true} duration={500} offset={-150}>
+                O nas
+              </Scroll>
+            </li>
+            <li>
+              <Scroll
+                to="organizations"
+                smooth={true}
+                duration={500}
+                offset={-150}
+              >
+                Fundacja i organizacje
+              </Scroll>
+            </li>
+            <li>
+              <Scroll to="contact" smooth={true} duration={500} offset={-150}>
+                Kontakt
+              </Scroll>
             </li>
           </ul>
         </nav>
-      )}
-      <nav className="main-header__navigation">
-        <ul className="main-header__nav-list">
-          <li>
-            <Scroll to="start" smooth={true} duration={500} offset={-150}>
-              Start
-            </Scroll>
-          </li>
-          <li>
-            <Scroll to="about" smooth={true} duration={500} offset={-150}>
-              O co chodzi?
-            </Scroll>
-          </li>
-          <li>
-            <Scroll to="about-us" smooth={true} duration={500} offset={-150}>
-              O nas
-            </Scroll>
-          </li>
-          <li>
-            <Scroll
-              to="organizations"
-              smooth={true}
-              duration={500}
-              offset={-150}
-            >
-              Fundacja i organizacje
-            </Scroll>
-          </li>
-          <li>
-            <Scroll to="contact" smooth={true} duration={500} offset={-150}>
-              Kontakt
-            </Scroll>
-          </li>
-        </ul>
-      </nav>
+      </div>
     </header>
   );
 };

@@ -68,3 +68,59 @@
     border: 0.75px solid $header-color;
   }
 }
+
+@media (max-width: 1024px) {
+  .register__panel {
+    width: 80%;
+  }
+
+  .register__title {
+    font-size: 32px;
+  }
+
+  .register__form {
+    width: 100%;
+  }
+
+  .register__input {
+    width: 80%;
+  }
+
+  .register__input input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .register__panel {
+    width: 90%;
+  }
+
+  .register__title {
+    font-size: 28px;
+  }
+
+  .register__form {
+    width: 100%;
+  }
+
+  .register__input {
+    width: 90%;
+    padding-top: 20px;
+  }
+
+  .register__input input {
+    width: 100%;
+  }
+
+  .register__nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .register__button {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}

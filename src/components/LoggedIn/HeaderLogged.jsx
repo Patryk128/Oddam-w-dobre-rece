@@ -5,6 +5,7 @@ import { Link as Scroll } from "react-scroll";
 const HeaderLogged = () => {
   const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,53 +46,71 @@ const HeaderLogged = () => {
     navigate("/home");
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header
-      className={`header-logged ${isSticky ? "header-logged--sticky" : ""}`}
+      className={`main-header ${isSticky ? "header-logged--sticky" : ""}`}
     >
-      <nav className="header-logged__navigation">
-        <h2>Cześć, {user.email}</h2>
+      <div className="main-header__content">
         <button
-          className="header-logged__button"
-          onClick={() => {
-            if (user.isLoggedIn) {
-              navigate("/main");
-            } else {
-              navigate("/login");
-            }
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
         >
-          Oddaj rzeczy
+          <span className="hamburger__line"></span>
+          <span className="hamburger__line"></span>
+          <span className="hamburger__line"></span>
         </button>
-        <button className="header-logged__button" onClick={handleLogout}>
-          Wyloguj
-        </button>
-      </nav>
-      <nav className="header-logged__navigation">
-        <ul className="header-logged__menu">
-          <li className="header-logged__menu-item">
-            <Link to="/home" onClick={handleScrollHome}>
-              Strona główna
-            </Link>
-          </li>
-          <li className="header-logged__menu-item">
-            <Scroll to="four-steps" smooth={true}>
-              Start
-            </Scroll>
-          </li>
-          <li className="header-logged__menu-item">
-            <Scroll to="to-give-back" smooth={true} offset={-130}>
-              ZACZNIJ ODDAWAĆ
-            </Scroll>
-          </li>
-          <li className="header-logged__menu-item">
-            <Scroll to="contact" smooth={true}>
-              Kontakt
-            </Scroll>
-          </li>
-        </ul>
-      </nav>
+
+        <nav className={`main-header__user-nav ${menuOpen ? "open" : ""}`}>
+          <div className="main-header__user-actions">
+            <h2>Cześć, {user.email}</h2>
+            <button
+              className="main-header__button"
+              onClick={() => {
+                if (user.isLoggedIn) {
+                  navigate("/main");
+                } else {
+                  navigate("/login");
+                }
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Oddaj rzeczy
+            </button>
+            <button className="main-header__button" onClick={handleLogout}>
+              Wyloguj
+            </button>
+          </div>
+        </nav>
+
+        <nav className={`main-header__navigation ${menuOpen ? "open" : ""}`}>
+          <ul className="main-header__nav-list">
+            <li>
+              <Link to="/home" onClick={handleScrollHome}>
+                Strona główna
+              </Link>
+            </li>
+            <li>
+              <Scroll to="four-steps" smooth={true}>
+                Start
+              </Scroll>
+            </li>
+            <li>
+              <Scroll to="to-give-back" smooth={true} offset={-130}>
+                ZACZNIJ ODDAWAĆ
+              </Scroll>
+            </li>
+            <li>
+              <Scroll to="contact" smooth={true}>
+                Kontakt
+              </Scroll>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

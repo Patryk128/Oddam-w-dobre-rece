@@ -40,3 +40,84 @@
   background-size: cover;
   background-position: left;
 }
+
+.about-us {
+  margin-top: 80px;
+  height: 935px;
+  @include flex;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    height: auto;
+    margin-top: 40px;
+  }
+}
+
+.about-us__text {
+  background-color: $primary-color;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 55px 150px;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 30px 20px;
+  }
+}
+
+.about-us__title {
+  font-size: 38px;
+  color: $header-color;
+  padding-bottom: 26px;
+  margin-top: 190px;
+
+  @media (max-width: 1024px) {
+    font-size: 28px;
+    margin-top: 40px;
+  }
+}
+
+.about-us__description {
+  font-size: 30px;
+  color: $header-color;
+  text-align: center;
+  margin-top: 55px;
+
+  @media (max-width: 1024px) {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+}
+
+.about-us__signature {
+  background-image: url(../assets/Signature.svg);
+  background-repeat: no-repeat;
+  width: 210px;
+  height: 210px;
+  align-self: flex-end;
+  margin-top: 50px;
+
+  @media (max-width: 1024px) {
+    align-self: center;
+    margin-top: 30px;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.about-us__image {
+  background-image: url(../assets/People.jpg);
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: left;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 300px;
+    background-position: center;
+  }
+}

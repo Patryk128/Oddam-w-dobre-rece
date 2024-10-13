@@ -54,7 +54,6 @@ const AuthHeader = () => {
     navigate("/register");
   };
 
-  // Funkcja do renderowania przycisków w zależności od ścieżki
   const renderButtons = () => {
     if (location.pathname === "/login") {
       return (

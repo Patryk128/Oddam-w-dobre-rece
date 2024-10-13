@@ -10,7 +10,7 @@ const Step2 = ({
   handleNextClick,
   handleBackClick,
 }) => {
-  const [error, setError] = useState(""); // Dodajemy stan do przechowywania błędów
+  const [error, setError] = useState("");
 
   const handleQuantitySelectClick = () =>
     setIsOptionsVisible(!isOptionsVisible);
@@ -18,15 +18,15 @@ const Step2 = ({
   const handleQuantityOptionClick = (option) => {
     setQuantitySelectedOption(option);
     setIsOptionsVisible(false);
-    setError(""); // Czyszczenie błędu po wybraniu opcji
+    setError("");
   };
 
   const handleNextClickInternal = () => {
     if (!quantitySelectedOption) {
       setError("Proszę wybrać liczbę worków przed przejściem dalej.");
     } else {
-      setError(""); // Czyszczenie błędu przed przejściem dalej
-      handleNextClick(); // Wywołanie oryginalnego handleNextClick
+      setError("");
+      handleNextClick();
     }
   };
 

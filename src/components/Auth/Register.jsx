@@ -53,7 +53,6 @@ const Register = () => {
             email: user.email,
           };
           localStorage.setItem("user", JSON.stringify(userData));
-          // Przekierowanie na tę samą stronę co po zalogowaniu
           navigate("/", { state: { email: user.email } });
         })
         .catch((error) => {
