@@ -182,3 +182,50 @@ button:hover {
     align-items: center;
   }
 }
+
+@media (max-width: 480px) {
+  .hamburger {
+    top: 15px;
+    right: 15px;
+    width: 25px;
+    height: 18px;
+  }
+
+  .hamburger__line {
+    height: 2px;
+  }
+
+  .main-header {
+    padding-right: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .main-header__guest-nav,
+  .main-header__user-nav,
+  .main-header__user-actions,
+  .main-header__navigation {
+    gap: 15px;
+  }
+
+  .main-header__button {
+    padding: 7px 15px;
+    font-size: 12px;
+  }
+
+  .main-header__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .decorative-border {
+    width: 200px;
+    height: 25px;
+  }
+
+  .main-header__auth-list {
+    gap: 15px;
+  }
+}

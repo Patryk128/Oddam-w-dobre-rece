@@ -135,152 +135,115 @@
   background-image: url(../assets/Instagram.svg);
 }
 
-.contact {
-  display: flex;
-  position: relative;
-  margin-top: 80px;
-  height: 1052px;
-
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
+  .contact {
     flex-direction: column;
     height: auto;
-    margin-top: 100px;
+    margin-top: 0;
+    background-color: #e3e3e3;
   }
-}
 
-.contact__img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../assets/Background-Contact-Form.jpg");
-  background-size: cover;
-  opacity: 0.2;
-  z-index: -1;
-
-  @media (max-width: 1024px) {
-    height: 300px;
+  .contact__img {
+    display: none;
   }
-}
 
-.contact__form {
-  margin-left: auto;
-  text-align: center;
-  width: 50%;
-  height: 100%;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  @media (max-width: 1024px) {
+  .contact__form {
     width: 100%;
     padding: 15px;
-    margin-top: 300px;
   }
-}
 
-.contact__title {
-  margin-top: 200px;
-  margin-bottom: 25px;
-  font-size: 38px;
-
-  @media (max-width: 1024px) {
+  .contact__title {
     margin-top: 40px;
     font-size: 28px;
   }
-}
 
-.contact__input {
-  margin-top: 70px;
-  margin-bottom: 15px;
-  text-align: left;
-  color: gray;
-  width: 100%;
-
-  @media (max-width: 1024px) {
+  .contact__input {
     margin-top: 40px;
   }
-}
 
-.contact__input--textarea {
-  margin-top: 40px;
-  box-sizing: border-box;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-}
-
-.contact__button-container {
-  text-align: right;
-  margin-top: 44px;
-
-  @media (max-width: 1024px) {
+  .contact__button-container {
     text-align: center;
     margin-top: 30px;
   }
-}
 
-.contact__button {
-  padding: 13px 52px;
-  border: 1px solid #000;
-  border-radius: 4px;
-  color: #000;
-  font-size: 16px;
-  cursor: pointer;
-
-  @media (max-width: 1024px) {
+  .contact__button {
     width: 100%;
   }
-}
 
-.footer {
-  width: 100%;
-  position: absolute;
-  bottom: 22px;
-  left: 0;
-
-  @media (max-width: 1024px) {
+  .footer {
     position: relative;
     bottom: 0;
     padding: 20px 0;
   }
-}
 
-.footer__content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  @media (max-width: 1024px) {
+  .footer__content {
     flex-direction: column;
     gap: 20px;
   }
-}
 
-.footer__title {
-  font-size: 18px;
-  text-align: center;
-  flex: 1;
-
-  @media (max-width: 1024px) {
+  .footer__title {
     font-size: 16px;
   }
-}
 
-.footer__socials {
-  display: flex;
-  gap: 15px;
-  padding-right: 142px;
-
-  @media (max-width: 1024px) {
+  .footer__socials {
     padding-right: 0;
   }
 }
 
-.footer__social {
-  background-position: center;
-  background-size: cover;
-  width: 20px;
-  height: 20px;
+@media (max-width: 480px) {
+  .contact {
+    flex-direction: column;
+    height: auto;
+    padding-top: 40px;
+  }
+
+  .contact__form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .contact__title {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+
+  .contact__input {
+    margin-top: 20px;
+  }
+
+  .contact__button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .contact__button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .footer {
+    position: relative;
+    bottom: 0;
+    padding: 10px 0;
+  }
+
+  .footer__content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer__title {
+    font-size: 14px;
+  }
+
+  .footer__socials {
+    padding-right: 0;
+    gap: 10px;
+  }
+
+  .footer__social {
+    width: 18px;
+    height: 18px;
+  }
 }

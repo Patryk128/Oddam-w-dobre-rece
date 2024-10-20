@@ -1,35 +1,16 @@
 .donation-process-wrapper {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
-.logged-warning-box {
-  background-color: $warning-color;
-  height: 179px;
-  padding-left: 142px;
-}
-
-.logged-home-warning-title {
-  padding-top: 50px;
-  font-size: 36px;
-  color: #000;
-  font-weight: 600;
-}
-.logged-home-warning-description {
-  font-size: 22px;
-  color: $header-color;
-  font-weight: 300;
-}
-
 .donation__form,
 .summary,
 .thank-you {
-  padding-left: 142px;
-  padding-top: 36px;
-  padding-bottom: 50px;
+  padding: 36px 0 50px 142px;
   background-image: url(../assets/Background-Form.jpg);
   background-position: center;
   background-size: cover;
-  height: 883px;
+  // height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -59,7 +40,7 @@
   @include flex;
   flex-direction: column;
 }
-.donation__form form {
+.pickup-form {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -250,8 +231,6 @@
   font-size: 26px;
 }
 
-.pickup-form {
-}
 .pickup-form__columns {
   display: flex;
   align-items: center;
@@ -329,8 +308,8 @@
 }
 .summary__columns {
   display: flex;
-  width: 50%;
-  justify-content: space-between;
+  // width: 50%;
+  justify-content: flex-start;
 }
 
 .summary__column--pickup-address {
@@ -365,23 +344,84 @@
 }
 
 @media (max-width: 1024px) {
-  .donation-process-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  .donation-process {
+    background-color: #e3e3e3;
   }
+  .donation-process-wrapper {
+    @include column;
+    // border-bottom: 1px solid black;
+    background-color: #e3e3e3;
+    overflow-x: hidden;
+  }
+  .donation-process-wrapper::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 5px;
+    background-color: #333; /* Linie dekoracyjne */
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+
+  .donation-process-wrapper::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 5px;
+    background-color: #333;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+  .donation__step-title,
+  .summary__title,
+  .pickup-form__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
   .donation__form,
   .summary,
   .thank-you {
-    padding: 20px;
-    background-position: top;
-    background-size: cover;
-    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    padding: 0;
+    text-align: center;
     background-image: none;
+    background-color: #e3e3e3;
+  }
+  .thank-you {
+    justify-content: center;
+    align-items: center;
+  }
+  .donation__step-indicator {
+    margin-top: 15px;
+    font-size: 22px;
   }
 
+  .summary {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+  }
+  .summary__buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+
+  .summary-text,
+  .thank-you__message {
+    font-size: 26px;
+    color: $header-color;
+    line-height: 1.5;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
   .summary-content,
   .thank-you__content {
     width: 100%;
@@ -393,17 +433,19 @@
     padding-right: 20px;
   }
 
-  .donation__step-title,
-  .summary__title,
-  .pickup-form__title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-top: 70px;
-  }
-
   .donation-item-label {
     font-size: 14px;
   }
+  .location-selection,
+  .quantity-selection {
+    align-items: center;
+    margin-top: 20px;
+  }
+  .location-selection__selected,
+  .quantity-selection__selected {
+    font-size: 22px;
+  }
+
   .aid-options {
     display: flex;
     justify-content: center;
@@ -419,36 +461,20 @@
   .aid-organization__textarea textarea {
     width: 80vw;
   }
-  .summary-text,
-  .thank-you__message {
-    font-size: 26px;
-    color: $header-color;
-    line-height: 1.5;
-    max-width: 100%;
-    word-wrap: break-word;
-  }
-
-  .summary__columns {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .summary__column {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
   .pickup-form__columns {
+    width: 100%;
     align-items: flex-start;
+    justify-content: space-evenly;
   }
   .pickup-form__column--left {
     margin-right: 10px;
   }
-  .donation__form form {
+  .pickup-form {
+    align-items: center;
+
     text-align: left;
     margin-top: 20px;
   }
-
   .form__group {
     width: 100%;
   }
@@ -457,10 +483,32 @@
   .form__group textarea {
     width: 100%;
   }
+  .summary__items-heading,
+  .summary__column-head,
+  .summary__column-heading,
+  .pickup-form__section-title,
+  .aid-description__title {
+    font-size: 24px;
+    padding: 15px 0;
+  }
+  .summary__details {
+    @include flex;
+  }
+  .summary__items-description,
+  .summary__location-description {
+    font-size: 18px;
+  }
+  .summary__icon {
+    margin: 0 10px;
+  }
+  .summary__columns {
+    flex-direction: column;
+    // width: 1000;
+  }
 
-  .summary__buttons {
-    display: flex;
-    justify-content: center;
+  .summary__column {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 
@@ -468,20 +516,38 @@
   .donation-process-wrapper {
     flex-direction: column;
     width: 100%;
-    align-items: stretch;
     box-sizing: border-box;
     overflow-x: hidden;
   }
-
   .donation__step-title,
   .summary__title,
   .pickup-form__title {
     font-size: 18px;
+    margin: 0;
   }
 
+  .thank-you {
+    justify-content: center;
+  }
+  .donation__step-indicator {
+    font-size: 18px;
+  }
+  .navigation__button--next:first-of-type {
+    margin: 0;
+  }
   .location-selection__selected,
   .quantity-selection__selected {
     font-size: 18px;
+  }
+  .aid-options {
+    align-items: center;
+  }
+  .pickup-form__columns {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form__group {
+    margin-bottom: 5px;
   }
   .summary__items-heading,
   .summary__column-head,
@@ -489,21 +555,18 @@
   .pickup-form__section-title,
   .aid-description__title {
     font-size: 18px;
-    font-weight: 300;
+    padding: 20px 50px;
+    text-align: center;
+  }
+  .pickup-form__section-title {
+    padding: 15px 0;
+  }
+  .summary__columns {
+    flex-direction: column;
   }
 
-  .summary__items-description,
-  .summary__location-description {
-    @include flex;
-    font-size: 18px;
-  }
-
-  .summary__icon--items,
-  .summary__icon--location {
-    height: 50px;
-    width: 50px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: 20px;
+  .summary__column {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
