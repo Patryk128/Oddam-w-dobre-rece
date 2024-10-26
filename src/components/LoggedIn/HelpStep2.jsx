@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 const Step2 = ({
-  selectedValue,
-  setSelectedValue,
   isOptionsVisible,
   setIsOptionsVisible,
   quantitySelectedOption,

@@ -21,26 +21,12 @@ const AuthHeader = () => {
     };
   }, []);
 
-  const [user, setUser] = useState(() => {
-    const userData = JSON.parse(localStorage.getItem("user")) || {};
-    return {
-      isLoggedIn: userData.isLoggedIn || false,
-      email: userData.email || "",
-    };
-  });
-
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user"));
     if (userData && !userData.isLoggedIn) {
       navigate("/logout");
     }
   }, [navigate]);
-
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    setUser({ isLoggedIn: false, email: "" });
-    navigate("/logout");
-  };
 
   const handleHome = () => {
     navigate("/");

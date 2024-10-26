@@ -6,11 +6,11 @@
 .donation__form,
 .summary,
 .thank-you {
+  height: 100vh;
   padding: 36px 0 50px 142px;
   background-image: url(../assets/Background-Form.jpg);
   background-position: center;
   background-size: cover;
-  // height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -221,8 +221,6 @@
 .aid-option.active {
   background-color: #fad648;
 }
-.aid-organization__textarea {
-}
 .aid-organization__textarea textarea {
   width: 570px;
   height: 40px;
@@ -308,7 +306,6 @@
 }
 .summary__columns {
   display: flex;
-  // width: 50%;
   justify-content: flex-start;
 }
 
@@ -349,7 +346,6 @@
   }
   .donation-process-wrapper {
     @include column;
-    // border-bottom: 1px solid black;
     background-color: #e3e3e3;
     overflow-x: hidden;
   }
@@ -358,7 +354,7 @@
     display: block;
     width: 100px;
     height: 5px;
-    background-color: #333; /* Linie dekoracyjne */
+    background-color: #333;
     margin: 20px 0;
     border-radius: 5px;
   }
@@ -439,7 +435,6 @@
   .location-selection,
   .quantity-selection {
     align-items: center;
-    margin-top: 20px;
   }
   .location-selection__selected,
   .quantity-selection__selected {
@@ -447,16 +442,13 @@
   }
 
   .aid-options {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    width: 520px;
+    @include column;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 10px;
+    padding: 0 25px;
   }
   .aid-option {
-    width: 80vw;
+    width: 100%;
   }
   .aid-organization__textarea textarea {
     width: 80vw;
@@ -488,6 +480,7 @@
   .summary__column-heading,
   .pickup-form__section-title,
   .aid-description__title {
+    text-align: center;
     font-size: 24px;
     padding: 15px 0;
   }
@@ -503,7 +496,6 @@
   }
   .summary__columns {
     flex-direction: column;
-    // width: 1000;
   }
 
   .summary__column {
@@ -540,7 +532,7 @@
     font-size: 18px;
   }
   .aid-options {
-    align-items: center;
+    padding: 0 50px;
   }
   .pickup-form__columns {
     flex-direction: column;
